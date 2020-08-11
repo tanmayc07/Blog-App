@@ -1,0 +1,29 @@
+{
+  "name": "Blog-App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "startDev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanmayc07/Blog-App.git"
+  },
+  "keywords": [],
+  "author": "Tanmay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanmayc07/Blog-App/issues"
+  },
+  "homepage": "https://github.com/tanmayc07/Blog-App#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
