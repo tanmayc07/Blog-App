@@ -14,4 +14,17 @@ module.exports = {
       res.send(`Documents = ${data}`);
     });
   },
+  updateData: function (req, res) {
+    var inputData = req.query;
+    var blogID = req.query.blogid;
+    blogModel.updateBlog(inputData, blogID, function (data) {
+      res.send(`Record updated! ${data}`);
+    });
+  },
+  deleteData: function (req, res) {
+    var blogID = req.query.blogid;
+    blogModel.deleteBlog(blogID, function (data) {
+      res.send(`${data.affectedRows} Record deleted!`);
+    });
+  },
 };

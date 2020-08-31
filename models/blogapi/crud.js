@@ -20,4 +20,20 @@ module.exports = {
     data = await blogTable.find();
     return callback(data);
   },
+  updateBlog: function (inputData, blogID, callback) {
+    console.log(blogID);
+    blogData = blogTable.findByIdAndUpdate(blogID, inputData);
+    blogData.exec(function (err, data) {
+      if (err) throw err;
+      return callback(data);
+    });
+  },
+  deleteBlog: function (blogID, callback) {
+    console.log(blogID);
+    blogData = blogTable.findByIdAndDelete(blogID);
+    blogData.exec(function (err, data) {
+      if (err) throw err;
+      return callback(data);
+    });
+  },
 };
