@@ -5,7 +5,7 @@ const routes = require("./routes");
 const PORT = process.env.PORT;
 const app = express();
 
-app.use("/assets", express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 app.use("/", routes);
 
 app.set("views", "./views");
