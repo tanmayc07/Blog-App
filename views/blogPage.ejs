@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+    <link rel="icon" href="img/book.svg" />
+    <title>Write.it</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+        }
+
+        .container {
+            background-color: white;
+            border: 1px solid #e6e6e6;
+        }
+
+        nav ul li a {
+            color: white;
+        }
+
+        nav .badge {
+            position: relative;
+            top: 23px;
+            right: 20px;
+        }
+
+        .section {
+            padding-top: 4vw;
+            padding-bottom: 4vw;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* .btn-small {
+        border: 2px solid #fff;
+      } */
+        @media screen and (max-width: 670px) {
+            header {
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <header>
+        <nav class="nav-wrapper black">
+            <!-- <a href="#" class="btn-medium">Join Us</a> -->
+
+            <div class="container">
+                <a href="#" class="brand-logo left-align">Write.it</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <!-- <li><a href="#" class="btn right">Join Now</a></li> -->
+
+                    <li>
+                        <button href="" form="create" type="submit"
+                            class="btn-small white indigo-text waves-effect waves-lights"
+                            style="border: solid 1px #6c63ff">
+                            Publish
+                            <!-- <i class="material-icons">flash_on</i> -->
+                        </button>
+                    </li>
+
+                    <!-- <li><span class="badge white-text pink">Join Us</span></li> -->
+                </ul>
+
+                <ul class="sidenav grey lighten-2" id="mobile-menu">
+                    <li><a href="">PUBLISH</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- <div class="intro">
+        <center><h1>Write.it</h1></center>
+        <h4>Dream it.</h4>
+      </div> -->
+    </header>
+
+    <!-- content -->
+
+    <div class="container">
+        <br /><br /><br />
+        <form action="/create" id="create" method="POST">
+            <label>
+                <h4>Title</h4>
+            </label><br /><br />
+            <textarea name="title" class="materialize-textarea"></textarea><br /><br />
+            <label for="">
+                <h4>Sub-title</h4>
+            </label><br /><br />
+            <textarea name="subtitle" class="materialize-textarea"></textarea><br /><br />
+            <label for="">
+                <h4>Content</h4>
+            </label><br /><br />
+            <textarea name="content" class="materialize-textarea"></textarea>
+            <br /><br /><br />
+            <!-- <button class="btn" style="background-color: black">Publish</button> -->
+        </form>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</body>
+
+</html>
