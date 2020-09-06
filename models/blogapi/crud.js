@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 
 var blogSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  author: String,
+  title: { type: String, required: true },
+  subtitle: { type: String, required: false },
+  noOfLikes: { type: Number, required: false },
+  content: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 });
 
 var blogTable = mongoose.model("blog", blogSchema);

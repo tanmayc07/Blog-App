@@ -1,16 +1,16 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const cookieParser = require("cookie-parser")
 const PORT = process.env.PORT;
 const { requireAuth } = require("./middleware/authMiddleware")
-const cors = require("cors")
 const app = express();
 
 
-app.use(cors());
 app.use(cookieParser());
+app.use(cors());
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
