@@ -1,28 +1,45 @@
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <!-- logo font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="img/book.svg" />
     <title>Write.it</title>
     <style>
-        header {
-            background: url(img/lukas2.jpg);
-            background-size: cover;
-            background-position: center;
-            min-height: 800px;
-        }
+      header {
+        background: url(img/lukas2.jpg);
+        background-size: cover;
+        background-position: center;
+        min-height: 800px;
+      }
 
-        /* 
+      /* header nav a {
+        font-family: "Dancing Script", cursive;
+      } */
+
+      /* 
       ::-webkit-scrollbar {
         width: 12px;
       }
@@ -33,48 +50,48 @@
         border-radius: 6px;
       } */
 
-        h1 {
-            font-size: 180px;
-            color: black;
-            font-weight: bolder;
-            font-family: "Poppins";
-            margin-top: 250px;
-        }
+      h1 {
+        font-size: 180px;
+        color: black;
+        font-weight: bolder;
+        font-family: "Poppins";
+        margin-top: 250px;
+      }
 
-        nav ul li a {
-            color: white;
-        }
+      nav ul li a {
+        color: white;
+      }
 
-        .parallax-container {
-            height: 300px;
-        }
+      .parallax-container {
+        height: 300px;
+      }
 
-        /* nav {
+      /* nav {
         position: fixed;
       } */
 
-        nav .badge {
-            position: relative;
-            top: 23px;
-            right: 20px;
-        }
+      nav .badge {
+        position: relative;
+        top: 23px;
+        right: 20px;
+      }
 
-        .section {
-            padding-top: 4vw;
-            padding-bottom: 4vw;
-        }
+      .section {
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+      }
 
-        .typing {
-            margin-left: 5px;
-        }
+      .typing {
+        margin-left: 5px;
+      }
 
-        .typing::after {
-            content: "";
-            border-right: 2px solid black;
-            animation: blink 0.5s infinite ease;
-        }
+      .typing::after {
+        content: "";
+        border-right: 2px solid black;
+        animation: blink 0.5s infinite ease;
+      }
 
-        /* .card {
+      /* .card {
         transition: 0.5s ease;
         cursor: pointer;
       }
@@ -84,148 +101,191 @@
         box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.6);
       } */
 
-        @keyframes blink {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
+      @keyframes blink {
+        0% {
+          opacity: 0;
         }
 
-        /* .btn-small {
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* .btn-small {
         border: 2px solid #fff;
       } */
 
-        @media screen and (max-width: 670px) {
-            header {
-                min-height: 500px;
-            }
+      @media screen and (max-width: 670px) {
+        header {
+          min-height: 500px;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- navbar -->
     <header>
-        <nav class="nav-wrapper black">
-            <!-- <a href="#" class="btn-medium">Join Us</a> -->
+      <nav class="nav-wrapper black">
+        <!-- <a href="#" class="btn-medium">Join Us</a> -->
 
-            <div class="container">
-                <a href="#" class="brand-logo left-align">Write.it</a>
-                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- <li><a href="#" class="btn right">Join Now</a></li> -->
-                    <li>
-                        <a href="#" class="btn-small waves-effect waves-lights" style="background-color: #6c63ff">Login
-                            <!-- <i class="material-icons">flash_on</i> -->
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn-small white indigo-text waves-effect waves-lights"
-                            style="border: solid 1px #6c63ff">Join Us
-                            <!-- <i class="material-icons">flash_on</i> -->
-                        </a>
-                    </li>
-
-                    <!-- <li><span class="badge white-text pink">Join Us</span></li> -->
-                </ul>
-
-                <ul class="sidenav grey lighten-2" id="mobile-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Join Us</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </div>
-        </nav>
         <div class="container">
-            <div class="intro">
-                <h1>Write.it</h1>
-                <h3 class="typing"></h3>
+          <a
+            href="#"
+            class="brand-logo left-align"
+            style="font-family: 'Dancing Script', cursive"
+            >Write.it</a
+          >
+          <!-- <a href="#" class="brand-logo left-align"
+            ><img src="/img/logo.svg" alt="logo" width="100" height="7          0"
+          /></a> -->
+          <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="#" class="btn right">Join Now</a></li> -->
+            <li>
+              <a
+                href="#"
+                class="btn-small waves-effect waves-lights"
+                style="background-color: #6c63ff"
+                >Login
+                <!-- <i class="material-icons">flash_on</i> -->
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="btn-small white indigo-text waves-effect waves-lights"
+                style="border: solid 1px #6c63ff"
+                >Join Us
+                <!-- <i class="material-icons">flash_on</i> -->
+              </a>
+            </li>
 
-                <br /><br />
-                <a href="#about" class="btn-large waves-effect waves-lights" style="background-color: #6c63ff">Know
-                    More</a>
-            </div>
+            <!-- <li><span class="badge white-text pink">Join Us</span></li> -->
+          </ul>
+
+          <ul class="sidenav grey lighten-2" id="mobile-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Join Us</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
         </div>
+      </nav>
+      <div class="container">
+        <div class="intro">
+          <h1>Write.it</h1>
+          <h3 class="typing"></h3>
 
-        <!-- <div class="intro">
+          <br /><br />
+          <a
+            href="#about"
+            class="btn-large waves-effect waves-lights"
+            style="background-color: #6c63ff"
+            >Know More</a
+          >
+        </div>
+      </div>
+
+      <!-- <div class="intro">
         <center><h1>Write.it</h1></center>
         <h4>Dream it.</h4>
       </div> -->
     </header>
     <!-- parallax 1 -->
     <div class="parallax-container">
-        <div class="parallax">
-            <img src="img/pexels-pixabay-163822.jpg" alt="" class="responsive-img" />
-        </div>
+      <div class="parallax">
+        <img
+          src="img/pexels-pixabay-163822.jpg"
+          alt=""
+          class="responsive-img"
+        />
+      </div>
     </div>
     <!-- photo / grid illustrations -->
     <section class="container section scrollspy" id="about">
-        <div class="row">
-            <div class="col s12 l4">
-                <img src="img/undraw_Chat_re_re1u.svg" alt="" class="responsive-img materialboxed" />
-            </div>
-            <div class="col s12 l6 offset-l1">
-                <h2 class="indigo-text text-darken-4">Lorem</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                    pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-                    architecto?
-                </p>
-            </div>
+      <div class="row">
+        <div class="col s12 l4">
+          <img
+            src="img/undraw_Chat_re_re1u.svg"
+            alt=""
+            class="responsive-img materialboxed"
+          />
         </div>
-        <div class="row">
-            <div class="col s12 l4 push-l7">
-                <img src="img/undraw_survey_05s5.svg" alt="" class="responsive-img materialboxed" />
-            </div>
-            <div class="col s12 l6 pull-l5 offset-l1 right-align">
-                <h2 class="indigo-text text-darken-4">Lorem</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                    pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-                    architecto?
-                </p>
-            </div>
+        <div class="col s12 l6 offset-l1">
+          <h2 class="indigo-text text-darken-4">Lorem</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+            pariatur reiciendis ex cum officiis unde debitis. Hic in esse
+            architecto?
+          </p>
         </div>
-        <div class="row">
-            <div class="col s12 l4">
-                <img src="img/undraw_online_connection_6778.svg" alt="" class="responsive-img materialboxed" />
-            </div>
-            <div class="col s12 l6 offset-l1">
-                <h2 class="indigo-text text-darken-4">Lorem</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                    pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-                    architecto?
-                </p>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l4 push-l7">
+          <img
+            src="img/undraw_survey_05s5.svg"
+            alt=""
+            class="responsive-img materialboxed"
+          />
         </div>
-        <div class="row">
-            <div class="col s12 l4 push-l7">
-                <img src="img/undraw_Freelancer_re_irh4.svg" alt="" class="responsive-img materialboxed" />
-            </div>
-            <div class="col s12 l6 pull-l5 offset-l1 right-align">
-                <h2 class="indigo-text text-darken-4">Lorem</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                    pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-                    architecto?
-                </p>
-            </div>
+        <div class="col s12 l6 pull-l5 offset-l1 right-align">
+          <h2 class="indigo-text text-darken-4">Lorem</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+            pariatur reiciendis ex cum officiis unde debitis. Hic in esse
+            architecto?
+          </p>
         </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l4">
+          <img
+            src="img/undraw_online_connection_6778.svg"
+            alt=""
+            class="responsive-img materialboxed"
+          />
+        </div>
+        <div class="col s12 l6 offset-l1">
+          <h2 class="indigo-text text-darken-4">Lorem</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+            pariatur reiciendis ex cum officiis unde debitis. Hic in esse
+            architecto?
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l4 push-l7">
+          <img
+            src="img/undraw_Freelancer_re_irh4.svg"
+            alt=""
+            class="responsive-img materialboxed"
+          />
+        </div>
+        <div class="col s12 l6 pull-l5 offset-l1 right-align">
+          <h2 class="indigo-text text-darken-4">Lorem</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+            pariatur reiciendis ex cum officiis unde debitis. Hic in esse
+            architecto?
+          </p>
+        </div>
+      </div>
     </section>
     <!-- parallax -->
     <div class="parallax-container">
-        <div class="parallax">
-            <img src="img/pexels-pixabay-163822.jpg" alt="" class="responsive-img" />
-        </div>
+      <div class="parallax">
+        <img
+          src="img/pexels-pixabay-163822.jpg"
+          alt=""
+          class="responsive-img"
+        />
+      </div>
     </div>
     <!-- services / tabs -->
 
@@ -233,42 +293,63 @@
 
     <!-- contact form -->
     <section class="container section scrollspy" id="contact">
-        <div class="row">
-            <div class="col s12 l5">
-                <h2 class="indigo-text text-darken-4">Get in touch..</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                    perferendis.
-                </p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
-                    architecto esse, consequuntur, quisquam quia neque animi dolor
-                    soluta vitae eos nulla vero cupiditate temporibus praesentium sit
-                    et, porro nam perspiciatis.
-                </p>
+      <div class="row">
+        <div class="col s12 l5">
+          <h2 class="indigo-text text-darken-4">Get in touch..</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
+            perferendis.
+          </p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
+            architecto esse, consequuntur, quisquam quia neque animi dolor
+            soluta vitae eos nulla vero cupiditate temporibus praesentium sit
+            et, porro nam perspiciatis.
+          </p>
+        </div>
+        <div class="col s12 l5 offset-l2">
+          <br /><br /><br />
+          <form
+            action="mailto:sahilambre06@gmail.com"
+            method="POST"
+            enctype="text/plain"
+          >
+            <div class="input-field">
+              <i class="material-icons prefix">sentiment_very_satisfied</i>
+              <input
+                type="text"
+                id="name"
+                name="Name"
+                autocomplete="off"
+                required
+              />
+              <label for="email">Your Name</label>
             </div>
-            <div class="col s12 l5 offset-l2">
-                <br /><br /><br />
-                <form action="mailto:sahilambre06@gmail.com" method="POST" enctype="text/plain">
-                    <div class="input-field">
-                        <i class="material-icons prefix">sentiment_very_satisfied</i>
-                        <input type="text" id="name" name="Name" autocomplete="off" required />
-                        <label for="email">Your Name</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">message</i>
-                        <textarea id="message" class="materialize-textarea" name="Message" autocomplete="off"
-                            required></textarea>
-                        <label for="message">Your Message</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">event_available</i>
-                        <input type="text" class="datepicker" id="date" name="Date" autocomplete="off" />
-                        <label for="date">Date</label>
-                    </div>
-                    <!-- <div class="input-field">
+            <div class="input-field">
+              <i class="material-icons prefix">message</i>
+              <textarea
+                id="message"
+                class="materialize-textarea"
+                name="Message"
+                autocomplete="off"
+                required
+              ></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">event_available</i>
+              <input
+                type="text"
+                class="datepicker"
+                id="date"
+                name="Date"
+                autocomplete="off"
+              />
+              <label for="date">Date</label>
+            </div>
+            <!-- <div class="input-field">
             <p>Services Required</p>
             <p>
               <label>
@@ -283,60 +364,63 @@
               </label>
             </p>
           </div> -->
-                    <div class="input-field center">
-                        <button class="btn waves-effect waves-lights" style="background-color: #6c63ff">
-                            Submit
-                        </button>
-                    </div>
-                </form>
+            <div class="input-field center">
+              <button
+                class="btn waves-effect waves-lights"
+                style="background-color: #6c63ff"
+              >
+                Submit
+              </button>
             </div>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- footer -->
     <footer class="page-footer grey darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 l6">
-                    <h5>More..</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                        inventore?
-                    </p>
-                    <ul>
-                        <li><a href="" class="grey-text text-lighten-3">Login</a></li>
-                        <li><a href="" class="grey-text text-lighten-3">Register</a></li>
-                    </ul>
-                </div>
-                <div class="col s12 l4 offset-l2">
-                    <h5>Meet the team</h5>
-                    <ul>
-                        <li><a href="" class="grey-text text-lighten-3">Lorem</a></li>
-                        <!-- <li><a href="" class="grey-text text-lighten-3">Twitter</a></li>
+      <div class="container">
+        <div class="row">
+          <div class="col s12 l6">
+            <h5>More..</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
+              inventore?
+            </p>
+            <ul>
+              <li><a href="" class="grey-text text-lighten-3">Login</a></li>
+              <li><a href="" class="grey-text text-lighten-3">Register</a></li>
+            </ul>
+          </div>
+          <div class="col s12 l4 offset-l2">
+            <h5>Meet the team</h5>
+            <ul>
+              <li><a href="" class="grey-text text-lighten-3">Lorem</a></li>
+              <!-- <li><a href="" class="grey-text text-lighten-3">Twitter</a></li>
             <li><a href="" class="grey-text text-lighten-3">LinkedIn</a></li>
             <li><a href="" class="grey-text text-lighten-3">Instagram</a></li> -->
-                    </ul>
-                </div>
-            </div>
+            </ul>
+          </div>
         </div>
-        <div class="footer-copyright grey darken-4">
-            <div class="container center-align">&copy; 2020 Write.it</div>
-        </div>
+      </div>
+      <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2020 Write.it</div>
+      </div>
     </footer>
+    <script src="/js/app.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $(".sidenav").sidenav();
-            $(".materialboxed").materialbox();
-            $(".parallax").parallax();
-            $(".scrollspy").scrollSpy();
-            $(".datepicker").datepicker({
-                // disableWeekends: true,
-            });
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".materialboxed").materialbox();
+        $(".parallax").parallax();
+        $(".scrollspy").scrollSpy();
+        $(".datepicker").datepicker({
+          // disableWeekends: true,
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
