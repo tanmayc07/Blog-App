@@ -3,7 +3,7 @@ const blogModel = require("../models/blogapi/crud");
 
 module.exports = {
   createForm: function (req, res) {
-    res.render("blogPage");
+    res.render("create");
   },
   createData: function (req, res) {
     var inputData = req.body;
