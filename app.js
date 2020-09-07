@@ -4,7 +4,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const blogRoutes = require("./routes/blogs/blogRoutes");
 const authRoutes = require("./routes/auths/authRoutes");
-
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT;
 const { requireAuth } = require("./middleware/authMiddleware");
