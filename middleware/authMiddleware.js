@@ -8,14 +8,14 @@ const requireAuth = (req, res, next) => {
     jwt.verify(token,'Sem 5 project', (err, decodedToken) => {
       if (err) {
         console.log(err.message);
-        res.redirect('/login');
+        res.redirect('/auth/login');
       } else {
         console.log(decodedToken);
         next();
       }
     });
   } else {
-    res.redirect('/login');
+    res.redirect('/auth/login');
   }
 };
 
