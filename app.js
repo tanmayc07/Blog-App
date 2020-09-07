@@ -7,6 +7,7 @@ const authRoutes = require("./routes/auths/authRoutes");
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT;
 const { requireAuth } = require("./middleware/authMiddleware");
+const Index  = require("./routes/Index");
 const app = express();
 
 app.use(cookieParser());
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/auth", authRoutes);
 app.use("/blogs", blogRoutes);
+app.use("/",Index);
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
