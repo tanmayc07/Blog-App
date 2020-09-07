@@ -19,7 +19,7 @@ const handleErrors = (err) => {
 }
 
 module.exports.register_get = (req, res) => {
-  res.render("registerpage");
+  res.render("register");
 }
 
 module.exports.login_get = (req, res) => {
