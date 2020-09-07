@@ -1,5 +1,8 @@
 const routes = require("express").Router();
 const blogController = require("../../controllers/blogcrud.controllers");
+const { requireAuth } = require("../../middleware/authMiddleware");
+
+routes.all("*", requireAuth);
 
 routes.route("/list").get(blogController.listData);
 
