@@ -63,20 +63,22 @@
 
               <h4 class="">Login</h4>
               <!-- form -->
-              <form action="">
+              <form action="/login" method="POST">
                 
                
                 
                 <div class="input-field col l12">
-                  <input type="text" autocomplete="off" required>
-                  <label for="">Username</label>
+                  <input type="text" autocomplete="off" name="username" id="username" required>
+                  <label for="">Email</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">Enter registered email</span>
                 </div>
                
                 <div class="input-field col l12 center">
-                  <input type="text" autocomplete="off" required>
+                  <input type="text" autocomplete="off" name="password" id="password" required>
                   <label for="">Password</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">Enter password</span>
                   <br>    <br>
-                  <button class="btn-large" style="background-color: #6C63FF">Login</button>
+                  <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
                 </div> 
                 <h6 class="center">OR</h6>
                 <p class="center">New here? <a href="#">Create account</a></p>
@@ -117,7 +119,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="/js/app.js"></script>
+    <!-- <script src="/js/app.js"></script> -->
     <script>
       $(document).ready(function () {
         // $(".sidenav").sidenav();
@@ -130,5 +132,34 @@
          });
       });
     </script>
+    <script>
+      const form = document.querySelector('form');
+
+      form.addEventListener("submit",async(e)=>{
+          e.preventDefault()
+          const email= form.email.value;
+          const password = form.password.value;
+                          
+          try{
+             const res = await fetch("/login",{
+                 method: "POST",
+                 body: JSON.stringify({email:email,password:password}),
+                 headers: {"Content-Type":"application/json"}
+             });
+             const data = await res.json();
+             console.log(data);
+             if(data.errors){
+                 console.log(data.errors);
+             }
+             if (data.user){
+                 location.assign("/home");
+             }
+         }           
+         catch(err){
+             console.log(err);
+
+         }
+      })
+  </script>    
   </body>
 </html>
