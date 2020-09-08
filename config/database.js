@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/test", {
+mongoose.connect("mongodb://localhost:27017/blog", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 
 mongoose.set("returnOriginal", false);
