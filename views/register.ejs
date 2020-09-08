@@ -25,7 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="img/book.svg" />
+    <link rel="icon" href="/img/book.svg" />
     <title>Register</title>
     <style></style>
   </head>
@@ -57,7 +57,7 @@
           <div class="row">
             <div class="col s12 l6">
               <br><br><br><br><br><br>
-              <img src="./img/undraw_secure_login_pdn4.svg" alt="img" class="responsive-img">
+              <img src="/img/undraw_secure_login_pdn4.svg" alt="img" class="responsive-img">
             </div>
             <div class="col s12 l5 offset-l1">
               <h4 class="">Register Now..</h4>
@@ -80,16 +80,16 @@
                 </div>
                 
                 <div class="input-field col l6">
-                  <input type="text" class="datepicker" id="DOB" name="DOB" required>
+                  <input type="text" class="datepicker" id="dob" name="dob" required>
                   <label for="">Date of Birth</label>
                 </div>
                 
                 <div class="input-field col l6">
                   <select name="gender" id="gender">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Other</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                   </select>
                   <label>Materialize Select</label>
                 </div>
@@ -100,7 +100,7 @@
                 </div>
                
                 <div class="input-field col l12 center">
-                  <input type="text" autocomplete="off" id="password" name="password" required>
+                  <input type="password" autocomplete="off" id="password" name="password" required>
                   <label for="">Password</label>
                   <br>    <br>
                   <button class="btn-large" type="submit" style="background-color: #6C63FF">Register</button>
@@ -162,20 +162,23 @@
       const form = document.querySelector('form');
 
       form.addEventListener("submit",async(e)=>{
-          e.preventDefault();
+          e.preventDefault()
           const firstname = form.fname.value;    
-          const lastname = form.lname.value;  
-          //const gender = form.gender.value;  
+          const lastname = form.lname.value; 
+          const DOB = form.dob.value; 
+          const gender = form.gender.value;  
           const email = form.email.value;
           const password = form.password.value;
           const username = form.username.value;
 
          try{
-             const res = await fetch("/register",{
+             const res = await fetch("/auth/register",{
                  method: "POST",
-                 body: JSON.stringify({firstname:firstname,lastname:lastname,email:email,password:password}),
+                 body: JSON.stringify({firstname:firstname,lastname:lastname,gender:gender,email:email,DOB:DOB,password:password,username:username}),
                  headers: {"Content-Type":"application/json"}
              });
+             location.assign("/auth/login");
+             
          } 
          catch(err){
              console.log(err);

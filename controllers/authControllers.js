@@ -23,7 +23,7 @@ module.exports.register_get = (req, res) => {
 }
 
 module.exports.login_get = (req, res) => {
-  res.render("loginpage");
+  res.render("login");
 }
 
 const maxAge = 3 * 24 * 60 * 60;
@@ -36,12 +36,9 @@ const createToken = (id)=>{
 
 module.exports.register_post = async (req, res) => {
   const { firstname,lastname,email,username,password,gender,DOB } = req.body;
-  console.log(req.body)
+  console.log(req.body);
   try {
     const user = await User.create({firstname,lastname,email,username, password ,gender,DOB});
-    const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(201).json({ user: user._id });
   }
   catch(err) {
     const errors = handleErrors(err);

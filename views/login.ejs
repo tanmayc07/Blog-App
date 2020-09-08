@@ -57,7 +57,7 @@
           <div class="row">
             <div class="col s12 l6">
               <br><br><br><br><br><br>
-              <img src="./img/undraw_Login_re_4vu2.svg" alt="img" class="responsive-img">
+              <img src="/img/undraw_Login_re_4vu2.svg" alt="img" class="responsive-img">
             </div><br><br><br><br><br>
             <div class="col s12 l5 offset-l1">
 
@@ -68,13 +68,13 @@
                
                 
                 <div class="input-field col l12">
-                  <input type="text" autocomplete="off" name="username" id="username" required>
+                  <input type="email" autocomplete="off" name="email" id="email" required>
                   <label for="">Email</label>
                   <span class="helper-text" data-error="wrong" data-success="right">Enter registered email</span>
                 </div>
                
                 <div class="input-field col l12 center">
-                  <input type="text" autocomplete="off" name="password" id="password" required>
+                  <input type="password" autocomplete="off" name="password" id="password" required>
                   <label for="">Password</label>
                   <span class="helper-text" data-error="wrong" data-success="right">Enter password</span>
                   <br>    <br>
@@ -141,7 +141,7 @@
           const password = form.password.value;
                           
           try{
-             const res = await fetch("/login",{
+             const res = await fetch("/auth/login",{
                  method: "POST",
                  body: JSON.stringify({email:email,password:password}),
                  headers: {"Content-Type":"application/json"}
@@ -152,7 +152,7 @@
                  console.log(data.errors);
              }
              if (data.user){
-                 location.assign("/home");
+                 location.assign("/");
              }
          }           
          catch(err){

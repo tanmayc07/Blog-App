@@ -18,14 +18,14 @@ app.use(bodyParser.json());
 app.use("/auth", authRoutes);
 app.use("/blogs", blogRoutes);
 app.use("/",Index);
-
+ 
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.get("/home", requireAuth, (req, res) => {
   res.json("LOGGED IN");
-});
-
+}); 
+  
 app.listen(PORT, () => {
   console.log(`Server started at port ${PORT}`);
 });
