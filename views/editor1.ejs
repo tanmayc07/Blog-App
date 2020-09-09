@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Editor's Dependecy Style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <!-- Editor's Style -->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <!-- logo font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Create Blogs</title>
+    <link rel="icon" href="/img/book.svg" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-wrapper black">
+        <ul>
+          <li>
+            <a href="#" class="btn black text-white waves-effect waves-lights"
+              ><i class="material-icons">arrow_back</i></a
+            >
+          </li>
+        </ul>
+        <div class="container">
+          <a
+            href="#"
+            class="brand-logo left-align"
+            style="font-family: 'Dancing Script', cursive"
+            >Write.it</a
+          >
+          <!-- <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+            <i class="material-icons">menu</i>
+          </a> -->
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#"
+                ><img
+                  src="/img/avatars/MUMMY.svg"
+                  alt="avatars"
+                  style="position: absolute; right: 15px; top: 7px"
+                  width="50px"
+              /></a>
+            </li>
+            <li>
+              <button
+                href=""
+                form="create"
+                type="submit"
+                class="btn-small white indigo-text waves-effect waves-lights"
+                style="border: solid 1px #d6d6d6"
+                onclick="sahil()"
+              >
+                Publish
+              </button>
+            </li>
+          </ul>
+          <!-- <ul class="sidenav grey lighten-2" id="mobile-menu">
+            <li><a href="">PUBLISH</a></li>
+          </ul> -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Editor -->
+    <div class="container">
+      <form action="">
+        <div class="input-field">
+          <input type="text" />
+          <label for="title">Title</label>
+        </div>
+        <div id="editor"></div>
+      </form>
+      <br />
+      <div class="center">
+        <button
+          href=""
+          form="create"
+          type="submit"
+          class="btn-small hide-on-large-only white indigo-text waves-effect waves-lights center"
+          style="border: solid 1px #6c63ff"
+          onclick="sahil()"
+        >
+          Publish
+        </button>
+      </div>
+    </div>
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+  </body>
+  <script>
+    const Editor = toastui.Editor;
+
+    const editor = new Editor({
+      el: document.querySelector("#editor"),
+      height: "600px",
+      initialEditType: "markdown",
+      previewStyle: "vertical",
+    });
+
+    //   editor.getHtml();
+
+    function sahil() {
+      var value = editor.getHtml();
+      console.log(value);
+    }
+  </script>
+</html>
