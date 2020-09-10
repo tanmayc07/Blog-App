@@ -13,10 +13,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-<<<<<<< HEAD
-=======
-        //validate: [isEmail ,"Enter a valid email"]
->>>>>>> 3bbe05c66caeda391f12bbab2a9c89750ec103de
     },
     username:{
         type: String,
@@ -24,14 +20,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-<<<<<<< HEAD
         required: [true,"Please enter a password"],
-        minlength: [6,"Minimum password length is 6"]
-    }
-});
-
-=======
-        required: [true,"Please enter a password"]
+        minlength: [6,"Minimum 6 characters"]
     },
     gender:{
         type: String,
@@ -50,7 +40,6 @@ userSchema.pre("save",async function (next){
     next();
 });
 
->>>>>>> 3bbe05c66caeda391f12bbab2a9c89750ec103de
 
 //static method to login user
 
@@ -68,8 +57,5 @@ userSchema.statics.login = async function(email,password) {
 
 const User = mongoose.model("user",userSchema);
 
-<<<<<<< HEAD
 module.exports = User;
-=======
-module.exports = User;
->>>>>>> 3bbe05c66caeda391f12bbab2a9c89750ec103de
+
