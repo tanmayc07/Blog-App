@@ -188,6 +188,9 @@
              if(data.errors){
                passwordError.textContent = data.errors.password;
              }
+             if (data.user){
+                 location.assign("/auth/login");
+             }
             
          } 
          catch(err){
