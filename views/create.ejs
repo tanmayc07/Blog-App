@@ -41,7 +41,7 @@
                 style="position: absolute; right: 15px; top: 7px" width="50px" /></a>
           </li>
           <li>
-            <button href="" form="create" type="submit" class="btn-small white indigo-text waves-effect waves-lights"
+            <button form="create" type="submit" class="btn-small white indigo-text waves-effect waves-lights"
               style="border: solid 1px #d6d6d6" onclick="getEditorValue()">
               Publish
             </button>
@@ -56,7 +56,7 @@
 
   <!-- Editor -->
   <div class="container">
-    <form action="" method="POST">
+    <form method="POST">
       <div class="input-field">
         <input id="title-inp" type="text" name="title" />
         <label for="title-inp">Title</label>
@@ -65,7 +65,7 @@
     </form>
     <br />
     <div class="center">
-      <button href="" form="create" type="submit"
+      <button form="create" type="submit"
         class="btn-small hide-on-large-only white indigo-text waves-effect waves-lights center"
         style="border: solid 1px #6c63ff" onclick="getEditorValue()">
         Publish
@@ -102,7 +102,7 @@
         method: "POST"
       };
 
-      fetch(url, otherparams).then(res => console.log(res)).then(() => { window.location.pathname = '/blogs/list' }).catch(err => console.log(err));
+      fetch(url, otherparams).then(res => console.log(res)).then(() => { window.location = '/blogs/list' }).catch(err => console.log(err));
     }
   </script>
 </body>

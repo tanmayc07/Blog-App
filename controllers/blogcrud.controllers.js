@@ -8,7 +8,7 @@ module.exports = {
   createData: function (req, res) {
     var inputData = req.body;
     blogModel.createBlog(inputData, function (data) {
-      console.log("Record created");
+      res.send("Record created");
     });
   },
   listData: function (req, res) {
