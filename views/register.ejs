@@ -106,7 +106,7 @@
                   <br>    <br>
                   <button class="btn-large" type="submit" style="background-color: #6C63FF">Register</button>
                 </div> 
-                <p class="center">Already a member? <a href="#">Login here</a></p>
+                <p class="center">Already a member? <a href="http://localhost:3000/auth/login">Login here</a></p>
                 
               </form>
             </div>
@@ -187,11 +187,10 @@
              console.log(data);
              if(data.errors){
                passwordError.textContent = data.errors.password;
+               location.assign("/auth/login");
              }
-             if (data.user){
-                 location.assign("/auth/login");
-             }
-            
+          
+
          } 
          catch(err){
              console.log(err);

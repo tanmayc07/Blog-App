@@ -70,18 +70,18 @@
                 <div class="input-field col l12">
                   <input type="email" autocomplete="off" name="email" id="email" required>
                   <label for="">Email</label>
-                  <span class="helper-text" data-error="wrong" data-success="right">Enter registered email</span>
+                  <div class="email error"></div>
                 </div>
                
                 <div class="input-field col l12 center">
                   <input type="password" autocomplete="off" name="password" id="password" required>
                   <label for="">Password</label>
-                  <span class="helper-text" data-error="wrong" data-success="right">Enter password</span>
+                  <div class="password error"></div>
                   <br>    <br>
                   <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
                 </div> 
                 <h6 class="center">OR</h6>
-                <p class="center">New here? <a href="#">Create account</a></p>
+                <p class="center">New here? <a href="http://localhost:3000/auth/register">Create account</a></p>
               </form>
             </div>
           </div>
@@ -127,19 +127,22 @@
         // $(".parallax").parallax();
         // $(".scrollspy").scrollSpy();
         $('select').formSelect();
-         $(".datepicker").datepicker({
+        // $(".datepicker").datepicker({
           // disableWeekends: true,
-         });
+        //  });
       });
     </script>
     <script>
       const form = document.querySelector('form');
+      let emailError = document.querySelector('.email.error');
+      let passwordError = document.querySelector('.password.error');
 
       form.addEventListener("submit",async(e)=>{
           e.preventDefault()
           const email= form.email.value;
           const password = form.password.value;
-                          
+          emailError.textContent = '';
+          passwordError.textContent = '';                
           try{
              const res = await fetch("/auth/login",{
                  method: "POST",
@@ -147,9 +150,12 @@
                  headers: {"Content-Type":"application/json"}
              });
              const data = await res.json();
-             console.log(data);
+             //console.log(data);
+             //console.log(data.errors.email);
              if(data.errors){
-                 console.log(data.errors);
+                console.log(data.errors.email);
+                 emailError.textContent =data.errors.email;
+                 passwordError.textContent = data.errors.password;
              }
              if (data.user){
                  location.assign("/");
