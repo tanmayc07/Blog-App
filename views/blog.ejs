@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Editor's Dependecy Style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+    <!-- Editor's Style -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+    <!-- logo font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+    <title><%= data.title %></title>
+    <link rel="icon" href="/img/book.svg" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav-wrapper black">
+            <ul>
+                <li>
+                    <a href="#" class="btn black text-white waves-effect waves-lights"><i
+                            class="material-icons">arrow_back</i></a>
+                </li>
+            </ul>
+            <div class="container">
+                <a href="#" class="brand-logo left-align" style="font-family: 'Dancing Script', cursive">Write.it</a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="#"><img src="/img/avatars/MUMMY.svg" alt="avatars"
+                                style="position: absolute; right: 15px; top: 7px" width="50px" /></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1><%= data.title %></h1>
+        <div class="blog">
+            <%- data.content %>
+        </div>
+    </div>
+</body>
+
+</html>
