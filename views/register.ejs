@@ -77,6 +77,7 @@
                 <div class="input-field col l12">
                   <input type="email" autocomplete="off" name="email" id="email" required>
                   <label for="">Your Email</label>
+                  <div class="email error"></div>
                 </div>
                 
                 <div class="input-field col l6">
@@ -162,12 +163,14 @@
     <script>
       const form = document.querySelector('form');
       const passwordError = document.querySelector('.password.error');
+      const emailError = document.querySelector('.email.error');
 
       form.addEventListener("submit",async(e)=>{
           e.preventDefault()
 
           //Reset errors
           passwordError.textContent = '';
+          emailError.textContent = '';
 
           const firstname = form.fname.value;    
           const lastname = form.lname.value; 
@@ -178,26 +181,28 @@
           const username = form.username.value;
 
          try{
-             const res = await fetch("/auth/register",{
+             let res = await fetch("/auth/register",{
                  method: "POST",
                  body: JSON.stringify({firstname:firstname,lastname:lastname,gender:gender,email:email,DOB:DOB,password:password,username:username}),
                  headers: {"Content-Type":"application/json"}
-             });
-             const data = await res.json();
-             console.log(data);
-             if(data.errors){
-               passwordError.textContent = data.errors.password;
-               location.assign("/auth/login");
-             }
-          
+             })
+                
+                if(res.ok){
+                  let json = await res.json();
+                  location.assign("/auth/login")
+                }
+                else{
+                  let json = await res.json();
+                  passwordError.textContent = json.errors.password;
+                  emailError.textContent= json.errors.email;
 
+                }
+                
          } 
          catch(err){
-             console.log(err);
-
-         }
+          console.log(err)
          
-      })
+        }  })
   </script>
   </body>
 </html>

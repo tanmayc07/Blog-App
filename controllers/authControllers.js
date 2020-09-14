@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const handleErrors =(err) => {
-  //console.log(err.message);
+  console.log(err.message);
   let errors = { email: '', password: '' };
 
   // incorrect email
@@ -21,9 +21,16 @@ const handleErrors =(err) => {
   if(err.message === 'user validation failed: password: Minimum 6 characters'){
     errors.password = 'Minimum 6 characters required';
   }
-  console.log(errors.password);
+  if(err.code === 11000){
+    errors.email = 'That email is already taken';
+  }
+
   return errors
 }
+
+const redirect = (req,res)=> {
+ res.redirect("/auth/login");
+}  
 
 module.exports.register_get = (req, res) => {
   res.render("register");
@@ -43,18 +50,17 @@ const createToken = (id)=>{
 
 module.exports.register_post = async (req, res) => {
   const { firstname,lastname,email,username,password,gender,DOB } = req.body;
-  console.log(req.body);
   try {
     const user = await User.create({firstname,lastname,email,username, password ,gender,DOB});
-    res.redirect("/auth/login");
     
+    res.status(200).json({});
   }
   catch(err) {
     const errors = handleErrors(err);
-    res.status(400).json({errors})
+
+    res.status(400).json({errors});
   }
-  
- 
+
 }
 module.exports.login_post = async (req, res) => {
   const email = req.body.email 
