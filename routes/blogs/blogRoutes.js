@@ -4,7 +4,8 @@ const { requireAuth } = require("../../middleware/authMiddleware");
 
 routes.all("*", requireAuth);
 
-routes.route("/list").get(blogController.listData);
+routes.route("/list").get(blogController.listAll);
+routes.route("/blog").get(blogController.listData);
 
 routes.route("/create").get(blogController.createForm);
 routes.route("/create").post(blogController.createData);

@@ -18,8 +18,12 @@ module.exports = {
       return callback(data);
     });
   },
+  listAll: async function (callback) {
+    data = await blogTable.find({});
+    return callback(data);
+  },
   listBlog: async function (callback) {
-    data = await blogTable.find();
+    data = await blogTable.findOne().hint({ $natural: -1 });
     return callback(data);
   },
   updateBlog: function (inputData, blogID, callback) {
