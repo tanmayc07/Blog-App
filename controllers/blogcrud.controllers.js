@@ -11,9 +11,14 @@ module.exports = {
       res.send("Record created");
     });
   },
+  listAll: function (req, res) {
+    blogModel.listAll(function (data) {
+      res.send(data);
+    });
+  },
   listData: function (req, res) {
     blogModel.listBlog(function (data) {
-      res.send(data);
+      res.render("blog", { data });
     });
   },
   updateData: function (req, res) {

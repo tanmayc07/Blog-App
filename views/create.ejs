@@ -26,7 +26,7 @@
     <nav class="nav-wrapper black">
       <ul>
         <li>
-          <a href="#" class="btn black text-white waves-effect waves-lights"><i
+          <a onclick="window.history.back()" class="btn black text-white waves-effect waves-lights"><i
               class="material-icons">arrow_back</i></a>
         </li>
       </ul>
@@ -102,7 +102,7 @@
         method: "POST"
       };
 
-      fetch(url, otherparams).then(res => console.log(res)).then(() => { window.location = '/blogs/list' }).catch(err => console.log(err));
+      fetch(url, otherparams).then(res => console.log(res)).then(() => { window.location = '/blogs/blog' }).catch(err => console.log(err));
     }
   </script>
 </body>
