@@ -1,4 +1,6 @@
 require("dotenv").config();
+const routes = require("express").Router();
+const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -9,6 +11,13 @@ const PORT = process.env.PORT;
 const { requireAuth } = require("./middleware/authMiddleware");
 const Index  = require("./routes/Index");
 const app = express();
+  
+app.use(express.static(__dirname + "./public"));
+app.use(express.json());
+app.post("/register",routes);
+app.use(authRoutes);
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
 app.use(cookieParser());
 app.use(cors());

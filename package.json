@@ -1,7 +1,6 @@
 {
   "name": "Blog-App",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -34,5 +33,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "description": ""
 }

@@ -1,5 +1,13 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs")
+
+const blogsSchema = new mongoose.Schema({
+    blogId:{
+        type: String,
+        required: false
+    }
+});
+
 const userSchema = new mongoose.Schema({
     firstname:{
         type: String,
@@ -13,7 +21,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-        //validate: [isEmail ,"Enter a valid email"]
     },
     username:{
         type: String,
@@ -21,7 +28,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true,"Please enter a password"]
+        required: [true,"Please enter a password"],
+        minlength: [6,"Minimum 6 characters"]
     },
     gender:{
         type: String,
@@ -30,7 +38,8 @@ const userSchema = new mongoose.Schema({
     DOB:{
         type: Date,
         required: false
-    }
+    },
+    Blogs:[blogsSchema]
 });
 
 //fire a function before doc saved to db
@@ -50,7 +59,7 @@ userSchema.statics.login = async function(email,password) {
         if (auth){
             return user;
         }
-        throw Error ("incorrect Password")
+        throw Error ("Incorrect Password")
     }
     throw Error ("Incorrect Email")
 }
@@ -58,3 +67,4 @@ userSchema.statics.login = async function(email,password) {
 const User = mongoose.model("user",userSchema);
 
 module.exports = User;
+

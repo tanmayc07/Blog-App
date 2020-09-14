@@ -50,16 +50,28 @@
         </div><br><br><br><br><br>
         <div class="col s12 l5 offset-l1">
 
-          <h4 class="">Login</h4>
-          <!-- form -->
-          <form action="/login" method="POST">
-
-
-
-            <div class="input-field col l12">
-              <input type="email" autocomplete="off" name="email" id="email" required>
-              <label for="">Email</label>
-              <span class="helper-text" data-error="wrong" data-success="right">Enter registered email</span>
+              <h4 class="">Login</h4>
+              <!-- form -->
+              <form action="/login" method="POST">
+                
+               
+                
+                <div class="input-field col l12 center">
+                  <input type="email" autocomplete="off" name="email" id="email" required>
+                  <label for="">Email</label>
+                  <div class="email error"></div>
+                </div>
+               
+                <div class="input-field col l12 center">
+                  <input type="password" autocomplete="off" name="password" id="password" required>
+                  <label for="">Password</label>
+                  <div class="password error"></div>
+                  <br>    <br>
+                  <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
+                </div> 
+                <h6 class="center">OR</h6>
+                <p class="center">New here? <a href="http://localhost:3000/auth/register">Create account</a></p>
+              </form>
             </div>
 
             <div class="input-field col l12 center">
@@ -100,56 +112,55 @@
           <!-- </ul> -->
         </div>
       </div>
-    </div>
-    <div class="footer-copyright grey darken-4">
-      <div class="container center-align">&copy; 2020 Write.it</div>
-    </div>
-  </footer>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <!-- <script src="/js/app.js"></script> -->
-  <script>
-    $(document).ready(function () {
-      // $(".sidenav").sidenav();
-      // $(".materialboxed").materialbox();
-      // $(".parallax").parallax();
-      // $(".scrollspy").scrollSpy();
-      $('select').formSelect();
-      $(".datepicker").datepicker({
-        // disableWeekends: true,
+
+      <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2020 Write.it</div>
+      </div>
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- <script src="/js/app.js"></script> -->
+    <script>
+      $(document).ready(function () {
+        // $(".sidenav").sidenav();
+        // $(".materialboxed").materialbox();
+        // $(".parallax").parallax();
+        // $(".scrollspy").scrollSpy();
+        $('select').formSelect();
+        // $(".datepicker").datepicker({
+          // disableWeekends: true,
+        //  });
       });
-    });
-  </script>
-  <script>
-    const form = document.querySelector('form');
+    </script>
+    <script>
+      const form = document.querySelector('form');
+      let emailError = document.querySelector('.email.error');
+      let passwordError = document.querySelector('.password.error');
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault()
-      const email = form.email.value;
-      const password = form.password.value;
-
-      try {
-        const res = await fetch("/auth/login", {
-          method: "POST",
-          body: JSON.stringify({ email: email, password: password }),
-          headers: { "Content-Type": "application/json" }
-        });
-        const data = await res.json();
-        console.log(data);
-        if (data.errors) {
-          console.log(data.errors);
-        }
-        if (data.user) {
-          location.assign("/");
-        }
-      }
-      catch (err) {
-        console.log(err);
-
-      }
-    })
-  </script>
-</body>
+      form.addEventListener("submit",async(e)=>{
+          e.preventDefault()
+          const email= form.email.value;
+          const password = form.password.value;
+          emailError.textContent = '';
+          passwordError.textContent = '';                
+          try{
+             const res = await fetch("/auth/login",{
+                 method: "POST",
+                 body: JSON.stringify({email:email,password:password}),
+                 headers: {"Content-Type":"application/json"}
+             });
+             const data = await res.json();
+             if(data.errors){
+                console.log(data.errors.email);
+                 emailError.textContent =data.errors.email;
+                 passwordError.textContent = data.errors.password;
+             }
+             if (data.user){
+                 location.assign("/");
+             }
+         }           
+         catch(err){
+             console.log(err);
 
 </html>
