@@ -35,6 +35,11 @@
       rel="stylesheet"
     />
     <title>Register</title>
+    <style>
+      section {
+        min-height: 100vh;
+      }
+    </style>
     <link rel="icon" href="/img/book.svg" />
   </head>
 
@@ -66,76 +71,115 @@
     </header>
     <!-- cards -->
     <br /><br />
-    <div class="container">
-      <div class="cards">
-        <div class="row">
-          <div class="col s12 l6">
-            <br /><br /><br /><br /><br /><br />
-            <img
-              src="/img/undraw_secure_login_pdn4.svg"
-              alt="img"
-              class="responsive-img"
-            />
-          </div>
-          <div class="col s12 l5 offset-l1">
-            <h4 class="">Register Now..</h4>
-            <!-- form -->
-            <form action="">
-              <div class="input-field col l6">
-                <input type="text" autocomplete="off" required />
-                <label for="name">First Name</label>
-              </div>
+    <section>
+      <div class="container">
+        <div class="cards">
+          <div class="row">
+            <div class="col s12 l6">
+              <br /><br /><br /><br /><br /><br />
+              <img
+                src="/img/undraw_secure_login_pdn4.svg"
+                alt="img"
+                class="responsive-img"
+              />
+            </div>
+            <div class="col s12 l5 offset-l1">
+              <h4 class="">Register Now..</h4>
+              <!-- form -->
+              <form action="/register" method="POST">
+                <div class="input-field col l6">
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="name">First Name</label>
+                </div>
 
-              <div class="input-field col l6">
-                <input type="text" autocomplete="off" required />
-                <label for="name">Last Name</label>
-              </div>
+                <div class="input-field col l6">
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="name">Last Name</label>
+                </div>
 
-              <div class="input-field col l12">
-                <input type="email" autocomplete="off" name="" id="" required />
-                <label for="">Your Email</label>
-                <div class="email error"></div>
-              </div>
+                <div class="input-field col l12">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="off"
+                    name=""
+                    id=""
+                    required
+                  />
+                  <label for="">Your Email</label>
+                  <div class="email error"></div>
+                </div>
 
-              <div class="input-field col l6">
-                <input type="text" class="datepicker" required />
-                <label for="">Date of Birth</label>
-              </div>
+                <div class="input-field col l6">
+                  <input type="text" name="dob" class="datepicker" required />
+                  <label for="">Date of Birth</label>
+                </div>
 
-              <div class="input-field col l6">
-                <select>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Male</option>
-                  <option value="2">Female</option>
-                  <option value="3">Other</option>
-                </select>
-                <label>Materialize Select</label>
-              </div>
+                <div class="input-field col l6">
+                  <select name="gender" id="gender">
+                    <option value="" disabled selected>Choose</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Other</option>
+                  </select>
+                  <label>Gender</label>
+                </div>
 
-              <div class="input-field col l12">
-                <input type="text" autocomplete="off" required />
-                <label for="">Username</label>
-              </div>
+                <div class="input-field col l12">
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="">Username</label>
+                </div>
 
-              <div class="input-field col l12 center">
-                <input type="password" autocomplete="off" required />
-                <label for="">Password</label>
-                <div class="password error"></div>
+                <div class="input-field col l12 center">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="">Password</label>
+                  <div class="password error"></div>
 
-                <br />
-                <br />
-                <button class="btn-large" style="background-color: #6c63ff">
-                  Register
-                </button>
-              </div>
-              <p class="center">
-                Already a member? <a href="login.html">Login here</a>
-              </p>
-            </form>
+                  <br />
+                  <br />
+                  <button
+                    class="btn-large"
+                    type="submit"
+                    style="background-color: #6c63ff"
+                  >
+                    Register
+                  </button>
+                </div>
+                <p class="center">
+                  Already a member? <a href="login.html">Login here</a>
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <!-- spacing -->
     <br /><br /><br />
     <!-- footer -->

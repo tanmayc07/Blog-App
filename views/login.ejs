@@ -19,11 +19,11 @@
     <title>Login</title>
     <link rel="icon" href="/img/book.svg" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    section {
+        min-height: 100vh;
     }
+
+  
   </style>
 </head>
 
@@ -49,49 +49,53 @@
   </header>
   <!-- cards -->
   <br>
-  <div class="container">
-    <div class="cards">
-      <div class="row">
-        <div class="col s12 l6">
-          <br><br><br><br><br><br>
-          <img src="/img/undraw_Login_re_4vu2.svg" alt="img" class="responsive-img">
-        </div><br><br><br><br><br>
-        <div class="col s12 l5 offset-l1">
-
-              <h4 class="">Login</h4>
-              <!-- form -->
-              <form action="/login" method="POST">
-                
-               
-                
-                <div class="input-field col l12 center">
-                  <input type="email" autocomplete="off" name="email" id="email" required>
-                  <label for="">Email</label>
-                  <div class="email error"></div>
+  <section>
+    <div class="container">
+      <div class="cards">
+        <div class="row">
+          <div class="col s12 l6">
+            <br><br><br><br><br><br>
+            <img src="/img/undraw_Login_re_4vu2.svg" alt="img" class="responsive-img">
+          </div>
+          <br><br><br><br><br>
+          <div class="col s12 l5 offset-l1">
+  
+                <h4 class="">Login</h4>
+                <!-- form -->
+                <form action="/login" method="POST">
                   
-                </div>
-               
-                <div class="input-field col l12 center">
-                  <input type="password" autocomplete="off" name="password" id="password" required>
-                  <label for="">Password</label>
-                  <div class="password error"></div>
+                 
                   
-                  <br>    <br>
-                  <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
-                </div> 
-                <h6 class="center">OR</h6>
-                <p class="center">New here? <a href="http://localhost:3000/auth/register">Create account</a></p>
-              </form>
-            </div>
-
+                  <div class="input-field col l12 center">
+                    <input type="email" autocomplete="off" name="email" id="email" required>
+                    <label for="">Email</label>
+                    <div class="email error"></div>
+                    
+                  </div>
+                 
+                  <div class="input-field col l12 center">
+                    <input type="password" autocomplete="off" name="password" id="password" required>
+                    <label for="">Password</label>
+                    <div class="password error"></div>
+                    
+                    <br>    <br>
+                    <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
+                  </div> 
+                  <h6 class="center">OR</h6>
+                  <p class="center">New here? <a href="http://localhost:3000/auth/register">Create account</a></p>
+                </form>
+              </div>
+  
+              
             
-          
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+  
   <!-- spacing -->
-  <br><br><br>
+  <!-- <br><br><br> -->
   <!-- footer -->
   <footer class="page-footer white darken-3">
     <div class="container">
