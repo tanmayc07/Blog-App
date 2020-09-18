@@ -7,7 +7,7 @@ module.exports = {
   },
 
   myBlog: function (req, res) {
-    res.render("myBlog");
+    res.render("explore");
   },
   createData: function (req, res) {
     var inputData = req.body;
