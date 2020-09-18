@@ -5,6 +5,10 @@ module.exports = {
   createForm: function (req, res) {
     res.render("create");
   },
+
+  myBlog: function (req, res) {
+    res.render("myBlog");
+  },
   createData: function (req, res) {
     var inputData = req.body;
     blogModel.createBlog(inputData, function (data) {

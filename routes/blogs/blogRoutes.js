@@ -13,4 +13,6 @@ routes.route("/create").post(blogController.createData);
 routes.route("/updateblog").post(blogController.updateData);
 routes.route("/deleteblog").post(blogController.deleteData);
 
+routes.route("/sahil").get(blogController.myBlog);
+
 module.exports = routes;
