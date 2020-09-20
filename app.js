@@ -11,7 +11,9 @@ const PORT = process.env.PORT;
 const { requireAuth } = require("./middleware/authMiddleware");
 const Index  = require("./routes/Index");
 const app = express();
-  
+const checkUser = require("./middleware/authMiddleware");
+
+
 app.use(express.static(__dirname + "./public"));
 app.use(express.json());
 app.post("/register",routes);
@@ -24,6 +26,7 @@ app.use(cors());
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use("/auth", authRoutes);
 app.use("/blogs", blogRoutes);
 app.use("/",Index);
@@ -31,9 +34,9 @@ app.use("/",Index);
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.get("/home", requireAuth, (req, res) => {
-  res.json("LOGGED IN");
-}); 
+//app.get("/auth/login", checkUser, (req, res) => {
+//  res.render("register");
+//}); 
   
 app.listen(PORT, () => {
   console.log(`Server started at port ${PORT}`);

@@ -1,12 +1,7 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 
-const blogsSchema = new mongoose.Schema({
-    blogId:{
-        type: String,
-        required: false
-    }
-});
+
 
 const userSchema = new mongoose.Schema({
     firstname:{
@@ -39,7 +34,7 @@ const userSchema = new mongoose.Schema({
         type: Date,
         required: false
     },
-    Blogs:[blogsSchema]
+    Blogs:[]
 });
 
 //fire a function before doc saved to db

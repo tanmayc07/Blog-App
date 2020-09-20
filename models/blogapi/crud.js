@@ -15,6 +15,7 @@ module.exports = {
     userData = new blogTable(inputData);
     userData.save(function (err, data) {
       if (err) throw err;
+        
       return callback(data);
     });
   },

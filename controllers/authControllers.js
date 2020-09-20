@@ -2,6 +2,7 @@ var User = require("../models/user/User");
 const conn = require("../config/database");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const checkUser = require("../middleware/authMiddleware");
 
 const handleErrors =(err) => {
   console.log(err.message);
@@ -27,10 +28,6 @@ const handleErrors =(err) => {
 
   return errors
 }
-
-const redirect = (req,res)=> {
- res.redirect("/auth/login");
-}  
 
 module.exports.register_get = (req, res) => {
   res.render("register");
@@ -79,4 +76,9 @@ module.exports.login_post = async (req, res) => {
 
   }
  
+}
+
+module.exports.logout_get = (req, res) => {
+  res.cookie('jwt', '', { maxAge: 1 });
+  res.redirect('/');
 }
