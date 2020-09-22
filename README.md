@@ -27,7 +27,7 @@ npm install
 
 3. Create `.env` file and insert proper **key values** (refer `.env.sample`).
 
-4. To **start** the server run
+4. To **start** the development server run
 
 ```bash
 npm run startDev
