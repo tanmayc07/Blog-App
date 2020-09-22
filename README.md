@@ -14,7 +14,21 @@
 
 <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE"><img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
 
-</center>
+</center><hr>
+
+## **How to run code locally**
+
+1. Clone the repository
+
+2. Download all the **packages** and it's **dependencies**. Open the terminal and type
+
+`npm install`
+
+3. Create `.env` file and insert proper key values (refer `.env.sample`).
+
+4. To start the server run
+
+`npm run startDev`
 
 <!-- [![Generic badge](https://img.shields.io/badge/Status-In_Progress-green.svg)](https://shields.io/) -->
 
