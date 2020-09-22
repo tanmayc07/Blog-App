@@ -6,18 +6,15 @@
 <p align="center">
   <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/tanmayc07/Blog-App?color=Blue">
 
-<img alt="Github status" src="https://img.shields.io/badge/status-In Progress-brightgreen">
+  <img alt="Github status" src="https://img.shields.io/badge/status-In Progress-brightgreen">
 
-<img alt="Github status" src="https://img.shields.io/badge/Nodejs->=12.0.0-brightgreen">
+  <img alt="Github status" src="https://img.shields.io/badge/Nodejs->=12.0.0-brightgreen">
 
-<img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen">
+  <img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
-<a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE"><img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
+  <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE"><img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
 </p>
 
-
-
-</center><hr>
 
 ## **How to run code locally**
 
