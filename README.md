@@ -11,8 +11,6 @@
   <img alt="Github status" src="https://img.shields.io/badge/Nodejs->=12.0.0-brightgreen">
 
   <img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen">
-
-  <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE"><img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
 </p>
 
 
