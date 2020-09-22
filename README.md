@@ -1,10 +1,10 @@
-<center>
-
 # A Blogging website built with Nodejs
 
-<img alt="cover-image" src="./public/img/coverImage.svg">
-
-<img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/tanmayc07/Blog-App?color=Blue">
+<p align="center">
+  <img alt="cover-image" src="./public/img/coverImage.svg">
+</p>
+<p align="center">
+  <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/tanmayc07/Blog-App?color=Blue">
 
 <img alt="Github status" src="https://img.shields.io/badge/status-In Progress-brightgreen">
 
@@ -13,6 +13,9 @@
 <img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
 <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE"><img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
+</p>
+
+
 
 </center><hr>
 
