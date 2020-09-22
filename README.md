@@ -1,4 +1,4 @@
-# A Blogging website built with Nodejs
+
 
 <p align="center">
   <img alt="cover-image" src="./public/img/coverImage.svg">
@@ -13,6 +13,7 @@
   <img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
+# A Blogging website built with Nodejs
 
 ## **How to run code locally**
 
