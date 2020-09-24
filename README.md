@@ -1,7 +1,3 @@
-
-<p>
-  <h1 align="center">Think it. Write it</h1>
-</p>
 <p align="center">
   <img alt="cover-image" src="./public/img/coverImage.svg">
 </p>
