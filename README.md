@@ -12,7 +12,7 @@
 </p>
 <p>
   <h1 align="center">Think it. Write it</h1>
- <p align="center">A Blogging website built with Nodejs</p>
+ <p align="center">A Blogging website built with Nodejs 🖋️</p>
 </p>
 
 
