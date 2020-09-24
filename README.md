@@ -14,8 +14,12 @@
 
   <img alt="Github status" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
+<p>
+  <h1 align="center">Think it. Write it</h1>
+ <p align="center">A Blogging website built with Nodejs</p>
+</p>
 
-# A Blogging website built with Nodejs
+
 
 ## **How to run code locally**
 
