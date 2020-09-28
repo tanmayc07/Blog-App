@@ -1,5 +1,6 @@
 const model = require("../config/database");
 const blogModel = require("../models/blogapi/crud");
+const userModel = require("../models/user/User");
 
 module.exports = {
   createForm: function (req, res) {
@@ -10,9 +11,11 @@ module.exports = {
     res.render("explore");
   },
   createData: function (req, res) {
-    var inputData = req.body;
-    blogModel.createBlog(inputData, function (data) {
-      res.send("Record created");
+    var inputData = req.query;
+    blogModel.createBlog(req, inputData, function (data) {
+      userModel.updateBlog(req, data, function () {
+        res.send("Record created");
+      });
     });
   },
   listAll: function (req, res) {

@@ -11,10 +11,12 @@ var blogSchema = new mongoose.Schema({
 var blogTable = mongoose.model("blog", blogSchema);
 
 module.exports = {
-  createBlog: function (inputData, callback) {
+  createBlog: function (req, inputData, callback) {
     userData = new blogTable(inputData);
     userData.save(function (err, data) {
       if (err) throw err;
+      console.log(data._id);
+
       return callback(data);
     });
   },
