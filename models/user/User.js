@@ -32,12 +32,11 @@ const userSchema = new mongoose.Schema({
     type: Date,
     required: false,
   },
-  blogs: {
+  blogs: [{
     type: mongoose.Schema.Types.ObjectId,
     required: false,
     ref: "blog",
-    default: "5f674b7d2cac2a3f6c9e593e",
-  },
+  }],
 });
 
 //fire a function before doc saved to db
@@ -66,19 +65,11 @@ var User = mongoose.model("user", userSchema);
 // module.exports = User;
 module.exports = {
   updateBlog: async function (req, data, callback) {
-    console.log(data._id);
-    console.log(req.params.userid);
-    await User.findByIdAndUpdate(
-      { _id: req.params.userid },
-      { $set: { firstname: "Sarthak" } },
-      function (err, res) {
-        if (err) {
-          console.log(err);
-        } else {
-          return callback();
-        }
-      }
+    const result = await User.findByIdAndUpdate(
+      { _id: req.userid },
+      { $push: { blogs: data._id } }
     );
+    callback()
   },
   createUser: function (data) {
     userData = new User(data);

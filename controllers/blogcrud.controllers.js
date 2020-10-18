@@ -4,14 +4,17 @@ const userModel = require("../models/user/User");
 
 module.exports = {
   createForm: function (req, res) {
-    res.render("create");
+    let user = {
+      id: req.userid
+    }
+    res.render("create", {user:user});
   },
 
   myBlog: function (req, res) {
     res.render("explore");
   },
   createData: function (req, res) {
-    var inputData = req.query;
+    var inputData = req.body;
     blogModel.createBlog(req, inputData, function (data) {
       userModel.updateBlog(req, data, function () {
         res.send("Record created");
