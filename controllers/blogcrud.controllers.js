@@ -9,10 +9,6 @@ module.exports = {
     }
     res.render("create", {user:user});
   },
-
-  myBlog: function (req, res) {
-    res.render("explore");
-  },
   createData: function (req, res) {
     var inputData = req.body;
     blogModel.createBlog(req, inputData, function (data) {
@@ -23,7 +19,7 @@ module.exports = {
   },
   listAll: function (req, res) {
     blogModel.listAll(function (data) {
-      res.send(data);
+      res.render("explore", { data });
     });
   },
   listData: function (req, res) {

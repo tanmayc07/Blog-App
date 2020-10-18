@@ -14,6 +14,7 @@ module.exports = {
   createBlog: function (req, inputData, callback) {
     userData = new blogTable(inputData);
     userData.save().then((data) => {callback(data)}).catch((err) => {console.log(err)});
+
   },
   listAll: async function (callback) {
     data = await blogTable.find({});

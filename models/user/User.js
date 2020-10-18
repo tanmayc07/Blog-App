@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+
 const userSchema = new mongoose.Schema({
   firstname: {
     type: String,
@@ -37,6 +38,7 @@ const userSchema = new mongoose.Schema({
     required: false,
     ref: "blog",
   }],
+
 });
 
 //fire a function before doc saved to db
