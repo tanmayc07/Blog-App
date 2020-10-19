@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-
+const secret = process.env.JWT;
 const requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
 
   // check json web token exists & is verified
   if (token) {
-    jwt.verify(token,'Sem 5 project', (err, decodedToken) => {
+    jwt.verify(token,secret, (err, decodedToken) => {
       if (err) {
         console.log(err.message);
         res.redirect('/auth/login');
@@ -19,19 +19,5 @@ const requireAuth = (req, res, next) => {
   }
 };
 
-const checkUser = (req,res,next)=> {
-  const token = req.cookies.jwt;
-  if(token)  {
-    res.redirect("/")
-    console.log(token)
-  }
-  else{
-    console.log(token)
-    next();
-    
-  }
 
-};
-
-module.exports = { checkUser };
 module.exports = { requireAuth };

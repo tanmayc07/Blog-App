@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const checkUser = require("../middleware/authMiddleware");
 
+const secret = process.env.JWT;
+
 const handleErrors = (err) => {
   console.log(err.message);
   let errors = { email: "", password: "" };
@@ -45,9 +47,10 @@ module.exports.login_get = (req, res) => {
 
 const maxAge = 3 * 24 * 60 * 60;
 
-const createToken = (id) => {
-  return jwt.sign({ id }, "Sem 5 project", {
-    expiresIn: maxAge,
+
+const createToken = (id)=>{
+  return jwt.sign({ id },secret,{
+    expiresIn: maxAge
   });
 };
 
