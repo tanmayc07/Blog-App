@@ -17,7 +17,7 @@
 
 
 
-## **How to run code locally**
+### **How to run code locally**
 
 1. Clone the repository
 
