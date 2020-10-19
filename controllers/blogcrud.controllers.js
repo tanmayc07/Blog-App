@@ -1,14 +1,20 @@
 const model = require("../config/database");
 const blogModel = require("../models/blogapi/crud");
+const userModel = require("../models/user/User");
 
 module.exports = {
   createForm: function (req, res) {
-    res.render("create");
+    let user = {
+      id: req.userid
+    }
+    res.render("create", {user:user});
   },
   createData: function (req, res) {
     var inputData = req.body;
-    blogModel.createBlog(inputData, function (data) {
-      res.send("Record created");
+    blogModel.createBlog(req, inputData, function (data) {
+      userModel.updateBlog(req, data, function () {
+        res.send("Record created");
+      });
     });
   },
   listAll: function (req, res) {

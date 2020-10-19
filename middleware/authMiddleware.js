@@ -10,7 +10,7 @@ const requireAuth = (req, res, next) => {
         console.log(err.message);
         res.redirect('/auth/login');
       } else {
-        console.log(decodedToken);
+        req.userid = decodedToken.id
         next();
       }
     });
