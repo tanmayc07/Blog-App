@@ -10,12 +10,16 @@ module.exports = {
     res.render("create", {user:user});
   },
   createData: function (req, res) {
-    var inputData = req.body;
-    blogModel.createBlog(req, inputData, function (data) {
-      userModel.updateBlog(req, data, function () {
-        res.send("Record created");
+    const inputData = req.body;
+    const userid = req.userid;
+    userModel.getOneUser(userid, function(username){
+      inputData.author = username
+      blogModel.createBlog(req, inputData, function (data) {
+        userModel.updateBlog(req, data, function () {
+          res.send("Record created");
+        });
       });
-    });
+    })
   },
   listAll: function (req, res) {
     blogModel.listAll(function (data) {
