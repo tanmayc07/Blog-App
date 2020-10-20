@@ -66,6 +66,11 @@ var User = mongoose.model("user", userSchema);
 
 // module.exports = User;
 module.exports = {
+  getOneUser: async function(id, callback){
+    const resuser = await User.findOne({ _id: id })
+    if(resuser)
+      callback(resuser.username)
+  },
   updateBlog: async function (req, data, callback) {
     const result = await User.findByIdAndUpdate(
       { _id: req.userid },

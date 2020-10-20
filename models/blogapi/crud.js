@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 var blogSchema = new mongoose.Schema({
   title: { type: String, required: true },
+  author: {type: String, required:true, ref:"user"},
   noOfLikes: { type: Number, required: false, default: 0 },
   content: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
@@ -14,7 +15,6 @@ module.exports = {
   createBlog: function (req, inputData, callback) {
     userData = new blogTable(inputData);
     userData.save().then((data) => {callback(data)}).catch((err) => {console.log(err)});
-
   },
   listAll: async function (callback) {
     data = await blogTable.find({});
