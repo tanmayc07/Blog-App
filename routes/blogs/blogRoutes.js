@@ -13,5 +13,6 @@ routes.route("/updateblog").post(blogController.updateData);
 routes.route("/deleteblog").post(blogController.deleteData);
 
 routes.route("/explore").get(blogController.listAll);
+routes.route("/myblogs").get(blogController.listMine);
 
 module.exports = routes;
