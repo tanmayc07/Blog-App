@@ -15,8 +15,8 @@ module.exports = {
     userModel.getOneUser(userid, function(username){
       inputData.author = username
       blogModel.createBlog(req, inputData, function (data) {
-        userModel.updateBlog(req, data, function () {
-          res.send("Record created");
+        userModel.updateBlog(req, data, function (data) {
+          res.json(data);
         });
       });
     })

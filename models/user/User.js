@@ -76,7 +76,7 @@ module.exports = {
       { _id: req.userid },
       { $push: { blogs: data._id } }
     );
-    callback()
+    callback(data)
   },
   createUser: function (data) {
     userData = new User(data);
