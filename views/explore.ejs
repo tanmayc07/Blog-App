@@ -42,7 +42,8 @@
         </li>
       </ul>
       <div class="container">
-        <a href="#" class="brand-logo left-align" style="font-family: 'Dancing Script', cursive">Write.it</a>
+        <a href="/blogs/explore" class="brand-logo left-align"
+          style="font-family: 'Dancing Script', cursive">Write.it</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
@@ -66,5 +67,16 @@
       <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr}); %> <% }); %>
     </div>
   </div>
+
+  <script>
+    const bcard = document.querySelectorAll(".card-content.blog-card");
+    for (let i = 0; i < bcard.length; i++) {
+      bcard[i].addEventListener('click', function (e) {
+        const id = bcard[i].dataset.bid
+        location.assign(`/blogs/${id}`)
+      });
+    }
+  </script>
 </body>
+
 </html>

@@ -27,7 +27,8 @@ module.exports = {
     });
   },
   listData: function (req, res) {
-    blogModel.listBlog(function (data) {
+    const id = req.params.id
+    blogModel.listBlog(id, function (data) {
       res.render("blog", { data });
     });
   },

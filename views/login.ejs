@@ -2,32 +2,31 @@
 
 <head>
   <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Editor's Dependecy Style -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
-    <!-- Editor's Style -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
-    <!-- logo font -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
-    <title>Login</title>
-    <link rel="icon" href="/img/book.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Editor's Dependecy Style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+  <!-- Editor's Style -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+  <!-- logo font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <title>Login</title>
+  <link rel="icon" href="/img/book.svg" />
   <style>
     section {
-        min-height: 100vh;
+      min-height: 100vh;
     }
 
     .password.error,
     .email.error {
-        color: red;
+      color: red;
     }
-  
   </style>
 </head>
 
@@ -58,31 +57,31 @@
           </div>
           <br><br><br><br><br>
           <div class="col s12 l5 offset-l1">
-                <h4 class="">Login</h4>
-                <!-- form -->
-                <form action="/login" method="POST">
-                  <div class="input-field col l12 center">
-                    <input type="email" autocomplete="off" name="email" id="email" required>
-                    <label for="">Email</label>
-                    <div class="email error"></div>
-                  </div> 
-                  <div class="input-field col l12 center">
-                    <input type="password" autocomplete="off" name="password" id="password" required>
-                    <label for="">Password</label>
-                    <div class="password error"></div>  
-                    <br>    <br>
-                    <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
-                  </div> 
-                  <h6 class="center">OR</h6>
-                  <p class="center">New here? <a href="/auth/register">Create account</a></p>
-                </form>
-              </div>  
+            <h4 class="">Login</h4>
+            <!-- form -->
+            <form action="/login" method="POST">
+              <div class="input-field col l12 center">
+                <input type="email" autocomplete="off" name="email" id="email" required>
+                <label for="">Email</label>
+                <div class="email error"></div>
+              </div>
+              <div class="input-field col l12 center">
+                <input type="password" autocomplete="off" name="password" id="password" required>
+                <label for="">Password</label>
+                <div class="password error"></div>
+                <br> <br>
+                <button class="btn-large" style="background-color: #6C63FF" type="submit">Login</button>
+              </div>
+              <h6 class="center">OR</h6>
+              <p class="center">New here? <a href="/auth/register">Create account</a></p>
+            </form>
           </div>
         </div>
       </div>
     </div>
+    </div>
   </section>
-  
+
   <!-- spacing -->
   <!-- <br><br><br> -->
   <!-- footer -->
@@ -101,7 +100,7 @@
           <h5>Meet the team</h5>
           <ul>
             <li><a href="" class="grey-text text-lighten-3">Lorem</a></li> -->
-            <!-- <li><a href="" class="grey-text text-lighten-3">Twitter</a></li>
+          <!-- <li><a href="" class="grey-text text-lighten-3">Twitter</a></li>
           <li><a href="" class="grey-text text-lighten-3">LinkedIn</a></li>
           <li><a href="" class="grey-text text-lighten-3">Instagram</a></li> -->
           <!-- </ul> -->
@@ -112,58 +111,58 @@
       <div class="container center-align">&copy; 2020 Write.it</div>
     </div>
   </footer>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <!-- <script src="/js/app.js"></script> -->
-    <script>
-      $(document).ready(function () {
-        // $(".sidenav").sidenav();
-        // $(".materialboxed").materialbox();
-        // $(".parallax").parallax();
-        // $(".scrollspy").scrollSpy();
-        $('select').formSelect();
-         $(".datepicker").datepicker({
-          // disableWeekends: true,
-         });
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <!-- <script src="/js/app.js"></script> -->
+  <script>
+    $(document).ready(function () {
+      // $(".sidenav").sidenav();
+      // $(".materialboxed").materialbox();
+      // $(".parallax").parallax();
+      // $(".scrollspy").scrollSpy();
+      $('select').formSelect();
+      $(".datepicker").datepicker({
+        // disableWeekends: true,
       });
-    </script>
-    <script>
-      const form = document.querySelector('form');
-      const passwordError = document.querySelector('.password.error');
-      const emailError = document.querySelector('.email.error');
-      form.addEventListener("submit",async(e)=>{
-          e.preventDefault()
+    });
+  </script>
+  <script>
+    const form = document.querySelector('form');
+    const passwordError = document.querySelector('.password.error');
+    const emailError = document.querySelector('.email.error');
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault()
 
-          //Reset errors
-          passwordError.textContent = '';
-          emailError.textContent = '';
-          const email= form.email.value;
-          const password = form.password.value;
-                          
-          try{
-             const res = await fetch("/auth/login",{
-                 method: "POST",
-                 body: JSON.stringify({email:email,password:password}),
-                 headers: {"Content-Type":"application/json"}
-             });
-             const data = await res.json();
-             console.log(data);
-             if(data.errors){
-              passwordError.textContent = data.errors.password;
-              emailError.textContent= data.errors.email;
-                
-             }
-             if (data.user){
-                 location.assign("/");
-             }
-         }           
-         catch(err){
-             console.log(err);
+      //Reset errors
+      passwordError.textContent = '';
+      emailError.textContent = '';
+      const email = form.email.value;
+      const password = form.password.value;
 
-         }
-      })
-  </script>    
-  </body>
+      try {
+        const res = await fetch("/auth/login", {
+          method: "POST",
+          body: JSON.stringify({ email: email, password: password }),
+          headers: { "Content-Type": "application/json" }
+        });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          passwordError.textContent = data.errors.password;
+          emailError.textContent = data.errors.email;
+
+        }
+        if (data.user) {
+          location.assign("/");
+        }
+      }
+      catch (err) {
+        console.log(err);
+
+      }
+    });
+  </script>
+</body>
 
 </html>
