@@ -25,8 +25,8 @@ module.exports = {
     data = await blogTable.find({});  
     return callback(data);
   },
-  listBlog: async function (callback) {
-    data = await blogTable.findOne().hint({ $natural: -1 });
+  listBlog: async function (id, callback) {
+    data = await blogTable.findOne({ _id: id });
     return callback(data);
   },
   updateBlog: function (inputData, blogID, callback) {

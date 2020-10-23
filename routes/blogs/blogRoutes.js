@@ -4,7 +4,7 @@ const { requireAuth } = require("../../middleware/authMiddleware");
 
 routes.all("*", requireAuth);
 
-routes.route("/blog").get(blogController.listData);
+
 
 routes.route("/create").get(blogController.createForm);
 routes.route("/create").post(blogController.createData);
@@ -14,5 +14,7 @@ routes.route("/deleteblog").post(blogController.deleteData);
 
 routes.route("/explore").get(blogController.listAll);
 routes.route("/myblogs").get(blogController.listMine);
+
+routes.route("/:id").get(blogController.listData);
 
 module.exports = routes;

@@ -15,8 +15,8 @@ module.exports = {
     userModel.getOneUser(userid, function(username){
       inputData.author = username
       blogModel.createBlog(req, inputData, function (data) {
-        userModel.updateBlog(req, data, function () {
-          res.send("Record created");
+        userModel.updateBlog(req, data, function (data) {
+          res.json(data);
         });
       });
     })
@@ -39,7 +39,8 @@ module.exports = {
     });
   },
   listData: function (req, res) {
-    blogModel.listBlog(function (data) {
+    const id = req.params.id
+    blogModel.listBlog(id, function (data) {
       res.render("blog", { data });
     });
   },
