@@ -16,12 +16,17 @@ module.exports = {
     userData = new blogTable(inputData);
     userData.save().then((data) => {callback(data)}).catch((err) => {console.log(err)});
   },
-  listAll: async function (callback) {
-    data = await blogTable.find({});
+  listMine: async function (author,callback) {
+    data = await blogTable.find({author:author});
+    console.log(data)
     return callback(data);
   },
-  listBlog: async function (callback) {
-    data = await blogTable.findOne().hint({ $natural: -1 });
+  listAll: async function (callback) {
+    data = await blogTable.find({});  
+    return callback(data);
+  },
+  listBlog: async function (id, callback) {
+    data = await blogTable.findOne({ _id: id });
     return callback(data);
   },
   updateBlog: function (inputData, blogID, callback) {

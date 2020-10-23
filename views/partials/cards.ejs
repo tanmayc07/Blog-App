@@ -2,8 +2,9 @@
   <div class="card large">
     <div class="card-image">
       <img src="/img/pexels-lukas-1420701.jpg" width="" height="200px" alt="curry-img" />
-    </div>
-    <div class="card-content">
+    </div>      
+
+    <div class="card-content blog-card" data-bid="<%= arr[index]._id %>">
       <% if (isMyBlog) { %>
         <span>Sahil</span>
       <% } %>
@@ -11,8 +12,7 @@
       <br />
       <span class="card-title"><%= arr[index].title %></span>
     </div>
-    <div class="card-action">
-      
+    <div class="card-action">   
       <a href="#" style="cursor: none"><%= arr[index].author %></a>
     </div>
   </div>

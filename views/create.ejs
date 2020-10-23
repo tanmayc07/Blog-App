@@ -96,8 +96,13 @@
         method: "POST"
       };
 
-      fetch(url, otherparams).then(res => console.log(res)).then(() => { window.location = '/blogs/blog' }).catch(err => console.log(err));
+      fetch(url, otherparams).then(async (res) => {
+        const data = await res.json()
+        window.location = `/blogs/${data._id}`
+      })
+        .catch(err => console.log(err));
     }
   </script>
 </body>
+
 </html>
