@@ -4,13 +4,16 @@
       <img src="/img/pexels-lukas-1420701.jpg" width="" height="200px" alt="curry-img" />
     </div>
     <div class="card-content">
+      <% if (isMyBlog) { %>
+        <span>Sahil</span>
+      <% } %>
       <p><%= arr[index].title %></p>
       <br />
       <span class="card-title"><%= arr[index].title %></span>
     </div>
     <div class="card-action">
       
-      <a href="#" style="color: #000000; cursor: none"><%= arr[index].author %></a>
+      <a href="#" style="cursor: none"><%= arr[index].author %></a>
     </div>
   </div>
 </div>
