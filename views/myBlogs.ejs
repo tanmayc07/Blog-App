@@ -29,6 +29,10 @@
       transform: scale(1.05);
       box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.6);
     }
+
+    .edit {
+        background-color: #636cff; 
+      }
   </style>
 </head>
 
@@ -42,14 +46,13 @@
         </li>
       </ul>
       <div class="container">
-        <a href="/blogs/explore" class="brand-logo left-align"
-          style="font-family: 'Dancing Script', cursive">Write.it</a>
+        <a href="#" class="brand-logo left-align" style="font-family: 'Dancing Script', cursive">Write.it</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
           <li>
-            <a href="/blogs/create" class="btn-floating pulse" style="background-color: #636cff">
+            <a href="#" class="btn-floating pulse" style="background-color: #636cff">
               <i class="material-icons">add</i>
             </a>
           </li>
@@ -61,22 +64,11 @@
     </ul>
   </header>
   <div class="container">
-    <h2 style="font-family: 'Dancing Script', cursive">Explore Blogs</h2>
+    <h2 style="font-family: 'Dancing Script', cursive">My Blogs</h2>
     <div class="row">
       <% data.forEach(function(currentValue, index, arr){ %>
-      <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr, isMyBlog: false}); %> <% }); %>
+      <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr, isMyBlog: true}); %> <% }); %>
     </div>
   </div>
-
-  <script>
-    const bcard = document.querySelectorAll(".card-content.blog-card");
-    for (let i = 0; i < bcard.length; i++) {
-      bcard[i].addEventListener('click', function (e) {
-        const id = bcard[i].dataset.bid
-        location.assign(`/blogs/${id}`)
-      });
-    }
-  </script>
 </body>
-
 </html>
