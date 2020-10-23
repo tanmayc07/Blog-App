@@ -16,8 +16,13 @@ module.exports = {
     userData = new blogTable(inputData);
     userData.save().then((data) => {callback(data)}).catch((err) => {console.log(err)});
   },
+  listMine: async function (author,callback) {
+    data = await blogTable.find({author:author});
+    console.log(data)
+    return callback(data);
+  },
   listAll: async function (callback) {
-    data = await blogTable.find({});
+    data = await blogTable.find({});  
     return callback(data);
   },
   listBlog: async function (id, callback) {

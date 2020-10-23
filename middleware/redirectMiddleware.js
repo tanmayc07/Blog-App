@@ -8,10 +8,8 @@ const checkUser = (req, res, next) => {
       jwt.verify(token,secret, (err, decodedToken) => {
         if (err) {
           console.log(err.message);
-         
         } else {
           res.redirect('/');
-        
         }
       });
     } else {

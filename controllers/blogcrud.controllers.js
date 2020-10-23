@@ -21,6 +21,18 @@ module.exports = {
       });
     })
   },
+  listMine: function (req, res) {
+    const inputData = req.body;
+    const userid = req.userid;    
+    userModel.getOneUser(userid, function(author){
+      inputData.author = author 
+
+      console.log(author)
+      blogModel.listMine(author,function (data) {
+        res.render("myblogs", { data });
+      });
+    })  
+  },
   listAll: function (req, res) {
     blogModel.listAll(function (data) {
       res.render("explore", { data });

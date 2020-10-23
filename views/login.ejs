@@ -151,10 +151,9 @@
         if (data.errors) {
           passwordError.textContent = data.errors.password;
           emailError.textContent = data.errors.email;
-
         }
         if (data.user) {
-          location.assign("/");
+          location.assign("/blogs/explore");
         }
       }
       catch (err) {
@@ -162,6 +161,7 @@
 
       }
     });
+
   </script>
 </body>
 
