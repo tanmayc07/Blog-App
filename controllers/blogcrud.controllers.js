@@ -29,7 +29,7 @@ module.exports = {
 
       console.log(author)
       blogModel.listMine(author,function (data) {
-        res.render("myblogs", { data });
+        res.render("myBlogs", { data });
       });
     })  
   },
