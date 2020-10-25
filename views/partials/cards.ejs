@@ -2,26 +2,26 @@
   <div class="card large">
     <div class="card-image">
       <img src="/img/pexels-lukas-1420701.jpg" width="" height="200px" alt="curry-img" />
-    </div>      
+    </div>
 
     <div class="card-content blog-card" data-bid="<%= arr[index]._id %>">
-      
+
       <p><%= arr[index].title %></p>
       <br />
       <span class="card-title"><%= arr[index].title %></span>
     </div>
-    
-    <div class="card-action">  
+
+    <div class="card-action">
       <div class="left-align" style="display: inline-block; margin-right: 96px;">
         <a href="#" style="cursor: none"><%= arr[index].author %></a>
-      </div> 
-      
+      </div>
+
       <% if (isMyBlog) { %>
-        <div style="display: inline-block;" class="right-align">
-          <a href="#" class="btn-floating btn-small" style="margin-right: 3px;"><i class="edit fas fa-pencil-alt"></i></a>
-          <a href="#" class="btn-floating btn-small"><i class="edit fas fa-trash"></i></a>
-        </div>
-        
+      <div style="display: inline-block;" class="right-align">
+        <a class="btn-floating btn-small updatebtn" style="margin-right: 3px;"><i
+            class="edit fas fa-pencil-alt"></i></a>
+        <a class="btn-floating btn-small deletebtn"><i class="edit fas fa-trash"></i></a>
+      </div>
       <% } %>
     </div>
   </div>
