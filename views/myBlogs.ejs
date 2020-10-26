@@ -31,6 +31,7 @@
     }
 
     .edit {
+<<<<<<< HEAD
         background-color: #636cff; 
       }
 
@@ -43,6 +44,9 @@
 
     ul.dropdown-content{
     width:10% !important;
+=======
+      background-color: #636cff;
+>>>>>>> 7b3e7e4e168db7bd97e0098d143ef3c36b932cae
     }
   </style>
 </head>
@@ -57,7 +61,8 @@
         </li>
       </ul>
       <div class="container">
-        <a href="#" class="brand-logo left-align" style="font-family: 'Dancing Script', cursive">Write.it</a>
+        <a href="/blogs/explore" class="brand-logo left-align"
+          style="font-family: 'Dancing Script', cursive">Write.it</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
@@ -112,12 +117,30 @@
   </script>
   <script>
     const bcard = document.querySelectorAll(".card-content.blog-card");
+    const cardFooter = document.querySelectorAll(".updatebtn");
+    const deletebtns = document.querySelectorAll(".deletebtn");
     for (let i = 0; i < bcard.length; i++) {
+      const id = bcard[i].dataset.bid
       bcard[i].addEventListener('click', function (e) {
-        const id = bcard[i].dataset.bid
         location.assign(`/blogs/${id}`)
+      });
+      cardFooter[i].addEventListener('click', function (e) {
+        location.assign(`/blogs/update/${id}`)
+      });
+      deletebtns[i].addEventListener('click', function (e) {
+        e.preventDefault()
+        const url = `/blogs/${id}`
+        const otherparams = {
+          method: "DELETE"
+        };
+        fetch(url, otherparams).then(async (res) => {
+          if (res.ok) {
+            window.location = `/blogs/myblogs`
+          }
+        }).catch(err => console.log(err))
       });
     }
   </script>
 </body>
+
 </html>

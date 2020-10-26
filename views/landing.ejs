@@ -14,6 +14,18 @@
   <!-- logo font -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/book.svg" />
+  <!-- Begin Mailchimp Signup Form -->
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup {
+      background: #fff;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+    }
+
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
   <title>Write.it</title>
   <style>
     header {
@@ -29,6 +41,14 @@
       font-weight: bolder;
       font-family: "Poppins";
       margin-top: 250px;
+    }
+
+    div.mc-field-group input {
+      height: 1.5rem !important;
+    }
+
+    input.button {
+      background-color: #121520 !important;
     }
 
     nav ul li a {
@@ -204,28 +224,52 @@
       </div>
       <div class="col s12 l5 offset-l2">
         <br /><br /><br />
-        <form action="mailto:sahilambre06@gmail.com" method="POST" enctype="text/plain">
-          <div class="input-field">
-            <i class="material-icons prefix">sentiment_very_satisfied</i>
-            <input type="text" id="name" name="Name" autocomplete="off" required />
-            <label for="email">Your Name</label>
-          </div>
-          <div class="input-field">
-            <i class="material-icons prefix">message</i>
-            <textarea id="message" class="materialize-textarea" name="Message" autocomplete="off" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-          <div class="input-field">
-            <i class="material-icons prefix">event_available</i>
-            <input type="text" class="datepicker" id="date" name="Date" autocomplete="off" />
-            <label for="date">Date</label>
-          </div>
-          <div class="input-field center">
-            <button class="btn waves-effect waves-lights" style="background-color: #6c63ff">
-              Submit
-            </button>
-          </div>
-        </form>
+        <div id="mc_embed_signup">
+          <form action="https://gmail.us2.list-manage.com/subscribe/post?u=daba9653d97e0875ee7a6fae3&amp;id=533d8d0254"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+            target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <h2 style="font-size: 2.1rem;">Signup for our Newsletter!</h2>
+              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+              <div class="mc-field-group">
+                <label for="mce-FNAME">First Name </label>
+                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              </div>
+              <div class="mc-field-group">
+                <label for="mce-LNAME">Last Name </label>
+                <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+              </div>
+              <div class="mc-field-group size1of2">
+                <label for="mce-BIRTHDAY-month">Birthday </label>
+                <div class="datefield">
+                  <span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value=""
+                      placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> /
+                  <span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value=""
+                      placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span>
+                  <span class="small-meta nowrap">( mm / dd )</span>
+                </div>
+              </div>
+              <p>Powered by <a href="http://eepurl.com/hg2LC5"
+                  title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                  name="b_daba9653d97e0875ee7a6fae3_533d8d0254" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                  class="button"></div>
+            </div>
+          </form>
+        </div>
+
+        <!--End mc_embed_signup-->
       </div>
     </div>
   </section>
