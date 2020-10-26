@@ -9,7 +9,7 @@ const checkUser = (req, res, next) => {
         if (err) {
           console.log(err.message);
         } else {
-          res.redirect('/');
+          res.redirect('/blogs/explore');
         }
       });
     } else {
