@@ -37,7 +37,12 @@ app.set("view engine", "ejs");
 //app.get("/auth/login", checkUser, (req, res) => {
 //  res.render("register");
 //}); 
-  
+
+app.use((req, res, next) => {
+  res.status(404).render("404page");
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server started at port ${PORT}`);
 });
