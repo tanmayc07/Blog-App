@@ -18,7 +18,6 @@ module.exports = {
   },
   listMine: async function (author,callback) {
     data = await blogTable.find({author:author});
-    console.log(data)
     return callback(data);
   },
   listAll: async function (callback) {
@@ -30,7 +29,6 @@ module.exports = {
     return callback(data);
   },
   updateBlog: function (inputData, blogID, callback) {
-    console.log(blogID);
     blogData = blogTable.findByIdAndUpdate(blogID, inputData);
     blogData.exec(function (err, data) {
       if (err) throw err;
