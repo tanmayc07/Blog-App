@@ -29,7 +29,18 @@ npm install
 
 3. Create `.env` file and insert proper **key values** (refer `.env.sample`).
 
-4. To **start** the development server run
+4. Install migrate-mongo globally
+
+```bash
+npm install -g migrate-mongo
+``` 
+5. Migrate up
+
+```bash
+migrate-mongo up
+```
+
+6. To **start** the development server run
 
 ```bash
 npm run startDev
