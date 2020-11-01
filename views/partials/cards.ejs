@@ -6,21 +6,21 @@
 
     <div class="card-content blog-card" data-bid="<%= arr[index]._id %>">
 
-      <p><%= arr[index].title %></p>
+      <p><%= arr[index].author %></p>
       <br />
       <span class="card-title"><%= arr[index].title %></span>
     </div>
 
     <div class="card-action">
-      <div class="left-align" style="display: inline-block; margin-right: 96px;">
-        <a href="#" style="cursor: none"><%= arr[index].author %></a>
+      <div class="left-align"> 
+        <!-- <a href="#" style="cursor: none"><%= arr[index].author %></a> -->
       </div>
 
       <% if (isMyBlog) { %>
-      <div style="display: inline-block;" class="right-align">
-        <a class="btn-floating btn-small updatebtn" style="margin-right: 3px;"><i
+      <div style="display: inline-block;">
+        <a class="btn-floating btn-small updatebtn tooltipped"  data-position="bottom" data-tooltip="Edit"><i
             class="edit fas fa-pencil-alt"></i></a>
-        <a class="btn-floating btn-small deletebtn"><i class="edit fas fa-trash"></i></a>
+        <a class="btn-floating btn-small deletebtn tooltipped" data-position="bottom" data-tooltip="Delete"><i class="edit fas fa-trash"></i></a>
       </div>
       <% } %>
     </div>

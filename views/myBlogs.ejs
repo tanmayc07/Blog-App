@@ -31,7 +31,6 @@
     }
 
     .edit {
-<<<<<<< HEAD
         background-color: #636cff; 
       }
 
@@ -44,9 +43,7 @@
 
     ul.dropdown-content{
     width:10% !important;
-=======
-      background-color: #636cff;
->>>>>>> 7b3e7e4e168db7bd97e0098d143ef3c36b932cae
+      /* background-color: #636cff; */
     }
   </style>
 </head>
@@ -63,7 +60,7 @@
       <div class="container">
         <a href="/blogs/explore" class="brand-logo left-align"
           style="font-family: 'Dancing Script', cursive">Write.it</a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
+        <a href="#" class="sidenav-trigger right" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
@@ -113,6 +110,7 @@
     $(document).ready(function () {
       $('.dropdown-trigger').dropdown();
       $(".sidenav").sidenav();
+      $('.tooltipped').tooltip();
       });
   </script>
   <script>
