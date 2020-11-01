@@ -42,6 +42,14 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
       font-family: "Poppins";
       margin-top: 250px;
     }
+    
+    .writeit {
+      font-size: 100px;
+      color: black;
+      font-weight: bolder;
+      font-family: "Poppins";
+      margin-top: 250px;
+    }
 
     div.mc-field-group input {
       height: 1.5rem !important;
@@ -123,15 +131,20 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
         <ul class="sidenav grey lighten-2" id="mobile-menu">
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Join Us</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="/auth/register">Join Us</a></li>
+          <li><a href="/auth/login">Login</a></li>
         </ul>
       </div>
     </nav>
     <div class="container">
       <div class="intro">
-        <h1>Write.it</h1>
-        <h3 class="typing"></h3>
+        <div class="show-on-small-only">
+          <h6 class="writeit">Write.it</h6>
+        </div>
+        <div class="show-on-small-only"></div>
+        <div class="hide-on-small-only"></div>
+        <!-- <h1 class="hide-on-small-only">Write.it</h1> -->
+        <h4 class="typing"></h4>
 
         <br /><br />
         <a href="#about" class="btn-large waves-effect waves-lights" style="background-color: #6c63ff">Know More</a>
@@ -151,11 +164,9 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
         <img src="img/undraw_Chat_re_re1u.svg" alt="" class="responsive-img materialboxed" />
       </div>
       <div class="col s12 l6 offset-l1">
-        <h2 class="indigo-text text-darken-4">Lorem</h2>
+        <h2 class="indigo-text text-darken-4">Explore</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-          pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-          architecto?
+          Find blogs on diverse topics written by fellow Users & choose what intrigues you.
         </p>
       </div>
     </div>
@@ -164,11 +175,9 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
         <img src="img/undraw_survey_05s5.svg" alt="" class="responsive-img materialboxed" />
       </div>
       <div class="col s12 l6 pull-l5 offset-l1 right-align">
-        <h2 class="indigo-text text-darken-4">Lorem</h2>
+        <h2 class="indigo-text text-darken-4">Connect</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-          pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-          architecto?
+          Message the Author directly about the blog to get valuable insights.
         </p>
       </div>
     </div>
@@ -177,11 +186,10 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
         <img src="img/undraw_online_connection_6778.svg" alt="" class="responsive-img materialboxed" />
       </div>
       <div class="col s12 l6 offset-l1">
-        <h2 class="indigo-text text-darken-4">Lorem</h2>
+        <h2 class="indigo-text text-darken-4">Share</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-          pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-          architecto?
+          Share your views in the comment section to express your field of vision on the particular blog.
+
         </p>
       </div>
     </div>
@@ -190,11 +198,10 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
         <img src="img/undraw_Freelancer_re_irh4.svg" alt="" class="responsive-img materialboxed" />
       </div>
       <div class="col s12 l6 pull-l5 offset-l1 right-align">
-        <h2 class="indigo-text text-darken-4">Lorem</h2>
+        <h2 class="indigo-text text-darken-4">Learn</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-          pariatur reiciendis ex cum officiis unde debitis. Hic in esse
-          architecto?
+          Master your ability of writing blogs by posting your views upon the world.
+
         </p>
       </div>
     </div>
@@ -207,7 +214,7 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
   </div>
   <section class="container section scrollspy" id="contact">
     <div class="row">
-      <div class="col s12 l5">
+      <!-- <div class="col s12 l5">
         <h2 class="indigo-text text-darken-4">Get in touch..</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
@@ -221,8 +228,8 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
           soluta vitae eos nulla vero cupiditate temporibus praesentium sit
           et, porro nam perspiciatis.
         </p>
-      </div>
-      <div class="col s12 l5 offset-l2">
+      </div> -->
+      <div class="col s12 m8 l7 offset-l3">
         <br /><br /><br />
         <div id="mc_embed_signup">
           <form action="https://gmail.us2.list-manage.com/subscribe/post?u=daba9653d97e0875ee7a6fae3&amp;id=533d8d0254"
@@ -308,7 +315,7 @@ We recommend moving this block and the preceding CSS link to the HEAD of your HT
   <script>
     $(document).ready(function () {
       $(".sidenav").sidenav();
-      $(".materialboxed").materialbox();
+      // $(".materialboxed").materialbox();
       $(".parallax").parallax();
       $(".scrollspy").scrollSpy();
       $(".datepicker").datepicker({
