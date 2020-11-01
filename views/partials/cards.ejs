@@ -1,0 +1,28 @@
+<div class="col s12 m6 l4">
+  <div class="card large">
+    <div class="card-image">
+      <img src="/img/pexels-lukas-1420701.jpg" width="" height="200px" alt="curry-img" />
+    </div>
+
+    <div class="card-content blog-card" data-bid="<%= arr[index]._id %>">
+
+      <p><%= arr[index].author %></p>
+      <br />
+      <span class="card-title"><%= arr[index].title %></span>
+    </div>
+
+    <div class="card-action">
+      <div class="left-align"> 
+        <!-- <a href="#" style="cursor: none"><%= arr[index].author %></a> -->
+      </div>
+
+      <% if (isMyBlog) { %>
+      <div style="display: inline-block;">
+        <a class="btn-floating btn-small updatebtn tooltipped"  data-position="bottom" data-tooltip="Edit"><i
+            class="edit fas fa-pencil-alt"></i></a>
+        <a class="btn-floating btn-small deletebtn tooltipped" data-position="bottom" data-tooltip="Delete"><i class="edit fas fa-trash"></i></a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

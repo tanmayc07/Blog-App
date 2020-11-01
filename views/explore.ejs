@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Editor's Dependecy Style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+  <!-- Editor's Style -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+  <!-- logo font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <title>My Blogs</title>
+  <link rel="icon" href="/img/book.svg" />
+  <style>
+    .card {
+      transition: 0.5s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.6);
+    }
+
+    #more {
+      position: absolute; 
+      right: 15px; 
+      top: 7px;
+      margin-top: 9px;
+    }
+
+    ul.dropdown-content{
+    width:10% !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav-wrapper black">
+      <ul>
+        <li>
+          <a onclick="window.history.back()" class="btn black text-white waves-effect waves-lights"><i
+              class="material-icons">arrow_back</i></a>
+        </li>
+      </ul>
+      <div class="container">
+        <a href="/blogs/explore" class="brand-logo left-align"
+          style="font-family: 'Dancing Script', cursive">Write.it</a>
+        <a href="#" class="sidenav-trigger right" data-target="mobile-links">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="/blogs/create" class="btn-floating pulse" style="background-color: #636cff">
+              <i class="material-icons">add</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+     <ul class="right hide-on-med-and-down">
+       <li>
+        <!-- <a id="more" class="dropdown-trigger btn black" href="#" data-target="dropdown1" class="right-align"><i class="material-icons">more_vert</i></a> -->
+        <a id="more" class="dropdown-trigger btn black" href="#" data-target="dropdown1" class="right-align"><img src="/img/avatars/21_avatar_outline.gif" alt="avataar" style="position: absolute; right: 15px; top: -7px; border-radius: 50%;" width="50px"></a>
+      
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="/blogs/create">Write Blogs</a></li>
+          <li><a href="/blogs/myBlogs">My Blogs</a></li>
+          <!-- <li><a href="/blogs/explore">Explore</a></li> -->
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+       </li>
+     </ul>
+    </nav>
+    <ul class="sidenav" id="mobile-links">
+      <li><a href="/blogs/create">Write Blog</a></li>
+      <li><a href="/blogs/myBlogs">My Blogs</a></li>
+      <!-- <li><a href="/blogs/explore">Explore</a></li> -->
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="/auth/logout">Logout</a></li>
+    </ul>
+  </header>
+  <div class="container">
+    <h2 style="font-family: 'Dancing Script', cursive">Explore Blogs</h2>
+    <div class="row">
+      <% data.forEach(function(currentValue, index, arr){ %>
+      <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr, isMyBlog: false}); %> <% }); %>
+    </div>  
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.dropdown-trigger').dropdown();
+      $(".sidenav").sidenav();
+      });
+  </script>
+
+  <script>
+    const bcard = document.querySelectorAll(".card-content.blog-card");
+    for (let i = 0; i < bcard.length; i++) {
+      bcard[i].addEventListener('click', function (e) {
+        const id = bcard[i].dataset.bid
+        location.assign(`/blogs/${id}`)
+      });
+    }
+  </script>
+</body>
+
+</html>

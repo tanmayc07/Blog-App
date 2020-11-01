@@ -1,0 +1,254 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Editor's Dependecy Style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <!-- Editor's Style -->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <!-- logo font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Register</title>
+    <style>
+      section {
+        min-height: 100vh;
+      }
+
+      .password.error,
+      .email.error {
+        color: red;
+      }
+    </style>
+    <link rel="icon" href="/img/book.svg" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <header>
+      <nav class="nav-wrapper black">
+        <ul>
+          <li>
+            <a
+              onclick="window.history.back()"
+              class="btn black text-white waves-effect waves-lights"
+              ><i class="material-icons">arrow_back</i></a
+            >
+          </li>
+        </ul>
+        <div class="container">
+          <a
+            href="#"
+            class="brand-logo left-align"
+            style="font-family: 'Dancing Script', cursive"
+            >Write.it</a
+          >
+          
+        </div>
+      </nav>
+    </header>
+    <!-- cards -->
+    <br /><br />
+    <section>
+      <div class="container">
+        <div class="cards">
+          <div class="row">
+            <div class="col s12 l6 hide-on-small-only">
+              <br /><br /><br /><br /><br /><br />
+              <img
+                src="/img/undraw_secure_login_pdn4.svg"
+                alt="img"
+                class="responsive-img"
+              />
+            </div>
+            <div class="col s12 l5 offset-l1">
+              <h4 class="">Register Now..</h4>
+              <!-- form -->
+              <form action="/register" method="POST">
+                <div class="input-field col l6">
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="name">First Name</label>
+                </div>
+                <div class="input-field col l6">
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="name">Last Name</label>
+                </div>
+                <div class="input-field col l12 center">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="off"
+                    name=""
+                    id=""
+                    required
+                  />
+                  <label for="">Your Email</label>
+                  <div class="email error"></div>
+                </div>
+                <div class="input-field col l6">
+                  <input type="text" name="dob" class="datepicker" required />
+                  <label for="">Date of Birth</label>
+                </div>
+                <div class="input-field col l6">
+                  <select name="gender" id="gender">
+                    <option value="" disabled selected>Choose</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <label>Gender</label>
+                </div>
+                <div class="input-field col l12 center">
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="">Username</label>
+                </div>
+                <div class="input-field col l12 center">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="">Password</label>
+                  <div class="password error"></div>
+                  <br />
+                  <br />
+                  <button
+                    class="btn-large"
+                    type="submit"
+                    style="background-color: #6c63ff"
+                  >
+                    Register
+                  </button>
+                </div>
+                <p class="center">
+                  Already a member? <a href="/auth/login">Login here</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- spacing -->
+    <br /><br /><br />
+    <!-- footer -->
+    <footer class="page-footer white darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 l6">
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2020 Write.it</div>
+      </div>
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script>
+      $(document).ready(function () {
+       
+        $("select").formSelect();
+        $(".datepicker").datepicker({
+          // disableWeekends: true,
+          yearRange: [1970, 2020],
+        });
+      });
+    </script>
+    <script>
+      const form = document.querySelector("form");
+      const passwordError = document.querySelector(".password.error");
+      const emailError = document.querySelector(".email.error");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        //Reset errors
+        passwordError.textContent = "";
+        emailError.textContent = "";
+
+        const firstname = form.fname.value;
+        const lastname = form.lname.value;
+        const DOB = form.dob.value;
+        const gender = form.gender.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const username = form.username.value;
+        try {
+          let res = await fetch("/auth/register", {
+            method: "POST",
+            body: JSON.stringify({
+              firstname: firstname,
+              lastname: lastname,
+              gender: gender,
+              email: email,
+              DOB: DOB,
+              password: password,
+              username: username,
+            }),
+            headers: { "Content-Type": "application/json" },
+          });
+
+          if (res.ok) {
+            let json = await res.json();
+            location.assign("/auth/login");
+          } else {
+            let json = await res.json();
+            passwordError.textContent = json.errors.password;
+            emailError.textContent = json.errors.email;
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    </script>
+  </body>
+</html>

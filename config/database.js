@@ -1,10 +1,17 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/blog", { useNewUrlParser: true });
+mongoose.connect(process.env.DB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
+
+mongoose.set("returnOriginal", false);
 
 const conn = mongoose.connection;
 
 conn.on("connected", function () {
-  console.log("Database is connected is successfully!");
+  console.log("Database is connected successfully!");
 });
 
 conn.on("disconnected", function () {
