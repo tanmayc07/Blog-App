@@ -5,31 +5,31 @@ const userModel = require("../models/user/User");
 module.exports = {
   createForm: function (req, res) {
     let user = {
-      id: req.userid
-    }
-    res.render("create", {user:user});
+      id: req.userid,
+    };
+    res.render("create", { user: user });
   },
   createData: function (req, res) {
     const inputData = req.body;
     const userid = req.userid;
-    userModel.getOneUser(userid, function(username){
-      inputData.author = username
+    userModel.getOneUser(userid, function (username) {
+      inputData.author = username;
       blogModel.createBlog(req, inputData, function (data) {
         userModel.updateBlog(req, data, function (data) {
           res.json(data);
         });
       });
-    })
+    });
   },
   listMine: function (req, res) {
     const inputData = req.body;
-    const userid = req.userid;    
-    userModel.getOneUser(userid, function(author){
-      inputData.author = author 
-      blogModel.listMine(author,function (data) {
+    const userid = req.userid;
+    userModel.getOneUser(userid, function (author) {
+      inputData.author = author;
+      blogModel.listMine(author, function (data) {
         res.render("myBlogs", { data });
       });
-    })  
+    });
   },
   listAll: function (req, res) {
     blogModel.listAll(function (data) {
@@ -37,16 +37,25 @@ module.exports = {
     });
   },
   listData: function (req, res) {
-    const id = req.params.id
+    const id = req.params.id;
     blogModel.listBlog(id, function (data) {
       res.render("blog", { data });
     });
   },
-  getUpdate: function(req, res){
-    const id = req.params.id
-    blogModel.listBlog(id, function(data){
-      res.render("update", { data: JSON.stringify(data), blogid:req.params.id })
-    }) 
+  filterTags: function (req, res) {
+    const tag = req.params.tag;
+    blogModel.filterList(tag, function (data, tag) {
+      res.render("tagBlogs", { data, tag });
+    });
+  },
+  getUpdate: function (req, res) {
+    const id = req.params.id;
+    blogModel.listBlog(id, function (data) {
+      res.render("update", {
+        data: JSON.stringify(data),
+        blogid: req.params.id,
+      });
+    });
   },
   updateData: function (req, res) {
     var inputData = req.body;

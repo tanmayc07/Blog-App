@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
   <!-- logo font -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
-  <title>My Blogs</title>
+  <title>Explore</title>
   <link rel="icon" href="/img/book.svg" />
   <style>
     .card {
@@ -50,6 +50,19 @@
 
     .b-date {
       color: rgb(173, 171, 171) !important;
+    }
+
+    .p_tags a {
+      font-size: 1.3rem;
+      border: 1px solid black;
+      border-radius: 15px;
+      padding: 5px;
+      color: black;
+    }
+
+    .p_tags a:hover {
+      background-color: #acb0fd;
+      color: white;
     }
 
     .tags:hover {
@@ -111,6 +124,19 @@
   </header>
   <div class="container">
     <h2 style="font-family: 'Dancing Script', cursive">Explore Blogs</h2>
+    <div class="row">
+      <h5 class="p_tags">
+        <span>Popular Tags:</span>
+        <a href="/blogs/filter/programming">programming</a>
+        <a href="/blogs/filter/javascript">javascript</a>
+        <a href="/blogs/filter/sql">sql</a>
+        <a href="/blogs/filter/python">python</a>
+        <a href="/blogs/filter/productivity">productivity</a>
+        <a href="/blogs/filter/self-help">self-help</a>
+        <a href="/blogs/filter/health">health</a>
+        <a href="/blogs/filter/inspiration">inspiration</a>
+      </h5>
+    </div>
     <div class="row">
       <% data.forEach(function(currentValue, index, arr){ %>
       <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr, isMyBlog: false}); %> <% }); %>

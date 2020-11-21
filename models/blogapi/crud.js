@@ -36,6 +36,10 @@ module.exports = {
     data = await blogTable.findOne({ _id: id });
     return callback(data);
   },
+  filterList: async function (tag, callback) {
+    data = await blogTable.find({ tags: [tag.toLowerCase()] });
+    return callback(data, tag);
+  },
   updateBlog: function (inputData, blogID, callback) {
     blogData = blogTable.findByIdAndUpdate(blogID, inputData);
     blogData.exec(function (err, data) {

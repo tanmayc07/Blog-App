@@ -139,7 +139,7 @@
       let chipdata = M.Chips.getInstance($('.chips')).chipsData
       let chipArray = []
       for (let i = 0; i < chipdata.length; i++) {
-        chipArray.push(chipdata[i].tag)
+        chipArray.push(chipdata[i].tag.toLowerCase())
       }
       var content = editor.getHtml();
       const url = "/blogs/create"

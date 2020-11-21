@@ -31,7 +31,8 @@
         </li>
       </ul>
       <div class="container">
-        <a href="#" class="brand-logo left-align" style="font-family: 'Dancing Script', cursive">Write.it</a>
+        <a href="/blogs/explore" class="brand-logo left-align"
+          style="font-family: 'Dancing Script', cursive">Write.it</a>
         <ul class="right hide-on-med-and-down">
           <li>
             <a href="#"><img src="/img/avatars/MUMMY.svg" alt="avatars"
@@ -54,6 +55,7 @@
       <div class="input-field">
         <input id="title-inp" type="text" name="title" />
         <label for="title-inp">Title</label>
+        <div class="chips chips-placeholder"></div>
       </div>
       <div id="editor"></div>
     </form>
@@ -69,6 +71,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
     const Editor = toastui.Editor;
     let initData = '<%- data %>';
@@ -95,14 +98,35 @@
     // Set the initial values of editor and title
     editor.setHtml(initData.content)
     document.getElementById("title-inp").value = initData.title
+    console.log(initData.tags)
+    let options = {
+      placeholder: 'Enter a tag',
+      secondaryPlaceholder: '+Tag',
+      limit: Infinity,
+      minLength: 1
+    }
+    var elems = document.querySelectorAll('.chips');
+    var instances = M.Chips.init(elems, options);
+    var instance = M.Chips.getInstance(document.querySelector('.chips'))
+    initData.tags.forEach((curr, index, arr) => {
+      instance.addChip({
+        tag: arr[index]
+      });
+    })
 
     function getEditorValue() {
       var title = document.getElementById("title-inp").value;
       var content = editor.getHtml();
       const url = `/blogs/update/${blogid}`
+      let chipdata = M.Chips.getInstance($('.chips')).chipsData
+      let chipArray = []
+      for (let i = 0; i < chipdata.length; i++) {
+        chipArray.push(chipdata[i].tag.toLowerCase())
+      }
       const reqdata = {
         title: title,
-        content: content
+        content: content,
+        tags: chipArray
       }
       var stringified = JSON.stringify(reqdata);
       const otherparams = {
