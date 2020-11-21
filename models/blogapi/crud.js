@@ -5,6 +5,7 @@ var blogSchema = new mongoose.Schema({
   author: { type: String, required: true, ref: "user" },
   noOfLikes: { type: Number, required: false, default: 0 },
   content: { type: String, required: true },
+  tags: [{ type: String, required: true }],
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
