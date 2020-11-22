@@ -5,6 +5,7 @@ const userModel = require("../models/user/User");
 module.exports = {
   createForm: function (req, res) {
     let user = {
+
       id: req.userid,
     };
     res.render("create", { user: user });
@@ -14,11 +15,13 @@ module.exports = {
     const userid = req.userid;
     userModel.getOneUser(userid, function (username) {
       inputData.author = username;
+
       blogModel.createBlog(req, inputData, function (data) {
         userModel.updateBlog(req, data, function (data) {
           res.json(data);
         });
       });
+
     });
   },
   listMine: function (req, res) {
@@ -30,6 +33,7 @@ module.exports = {
         res.render("myBlogs", { data });
       });
     });
+
   },
   listAll: function (req, res) {
     blogModel.listAll(function (data) {
@@ -38,6 +42,7 @@ module.exports = {
   },
   listData: function (req, res) {
     const id = req.params.id;
+
     blogModel.listBlog(id, function (data) {
       res.render("blog", { data });
     });
@@ -56,6 +61,7 @@ module.exports = {
         blogid: req.params.id,
       });
     });
+
   },
   updateData: function (req, res) {
     var inputData = req.body;
