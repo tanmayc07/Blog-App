@@ -18,19 +18,17 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
     <!-- logo font -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
-    <title><%= data.title %></title>
+    <title>Explore</title>
     <link rel="icon" href="/img/book.svg" />
     <style>
-
-        ::-moz-selection {
-            /* Code for Firefox */
-            color: white;
-            background: rgb(173, 182, 255);
+        .card {
+            transition: 0.5s ease;
+            cursor: pointer;
         }
 
-        ::selection {
-            color: white;
-            background: rgb(173, 182, 255);
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.6);
         }
 
         #more {
@@ -44,8 +42,40 @@
             width: 10% !important;
         }
 
-        code {
-            color: rgb(169, 102, 245);
+        .no_blog {
+            display: flex;
+            height: 70vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .b-title {
+            font-size: 1.2rem !important;
+            font-weight: bold !important;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            letter-spacing: 0.1rem;
+        }
+
+        .b-date {
+            color: rgb(173, 171, 171) !important;
+        }
+
+        .p_tags a {
+            font-size: 1.3rem;
+            border: 1px solid black;
+            border-radius: 15px;
+            padding: 5px;
+            color: black;
+        }
+
+        .p_tags a:hover {
+            background-color: #acb0fd;
+            color: white;
+        }
+
+        .tags:hover {
+            background-color: #acb0fd;
+            color: white;
         }
     </style>
 </head>
@@ -62,6 +92,16 @@
             <div class="container">
                 <a href="/blogs/explore" class="brand-logo left-align"
                     style="font-family: 'Dancing Script', cursive">Write.it</a>
+                <a href="#" class="sidenav-trigger right" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="/blogs/create" class="btn-floating pulse" style="background-color: #636cff">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <ul class="right hide-on-med-and-down">
                 <li>
@@ -75,7 +115,7 @@
                     <ul id='dropdown1' class='dropdown-content'>
                         <li><a href="/blogs/create">Write Blogs</a></li>
                         <li><a href="/blogs/myBlogs">My Blogs</a></li>
-                        <li><a href="/blogs/explore">Explore</a></li>
+                        <!-- <li><a href="/blogs/explore">Explore</a></li> -->
                         <li class="divider" tabindex="-1"></li>
                         <li><a href="/auth/logout">Logout</a></li>
                     </ul>
@@ -85,17 +125,22 @@
         <ul class="sidenav" id="mobile-links">
             <li><a href="/blogs/create">Write Blog</a></li>
             <li><a href="/blogs/myBlogs">My Blogs</a></li>
-            <li><a href="/blogs/explore">Explore</a></li>
+            <!-- <li><a href="/blogs/explore">Explore</a></li> -->
             <li class="divider" tabindex="-1"></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
         </ul>
-
     </header>
     <div class="container">
-        <h1><%= data.title %></h1>
-        <div class="blog">
-            <%- data.content %>
+        <h2 style="font-family: 'Dancing Script', cursive"><%= tag %></h2>
+        <% if(data.length === 0){ %>
+        <h4 class="no_blog">Sorry No Blogs found...</h4>
+        <% }else { %>
+        <div class="row">
+            <% data.forEach(function(currentValue, index, arr){ %>
+            <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr, isMyBlog: false}); %>
+            <% }); %>
         </div>
+        <% } %>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
@@ -105,6 +150,16 @@
             $('.dropdown-trigger').dropdown();
             $(".sidenav").sidenav();
         });
+    </script>
+
+    <script>
+        const bcard = document.querySelectorAll(".card-content.blog-card");
+        for (let i = 0; i < bcard.length; i++) {
+            bcard[i].addEventListener('click', function (e) {
+                const id = bcard[i].dataset.bid
+                location.assign(`/blogs/${id}`)
+            });
+        }
     </script>
 </body>
 

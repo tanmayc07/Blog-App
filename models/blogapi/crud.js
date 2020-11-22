@@ -5,6 +5,7 @@ var blogSchema = new mongoose.Schema({
   author: { type: String, required: true, ref: "user" },
   noOfLikes: { type: Number, required: false, default: 0 },
   content: { type: String, required: true },
+  tags: [{ type: String, required: true }],
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
@@ -34,6 +35,10 @@ module.exports = {
   listBlog: async function (id, callback) {
     data = await blogTable.findOne({ _id: id });
     return callback(data);
+  },
+  filterList: async function (tag, callback) {
+    data = await blogTable.find({ tags: tag });
+    return callback(data, tag);
   },
   updateBlog: function (inputData, blogID, callback) {
     blogData = blogTable.findByIdAndUpdate(blogID, inputData);

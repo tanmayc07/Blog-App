@@ -10,6 +10,7 @@ routes.route("/create").post(blogController.createData);
 routes.route("/explore").get(blogController.listAll);
 routes.route("/myblogs").get(blogController.listMine);
 
+routes.route("/filter/:tag").get(blogController.filterTags);
 routes.route("/update/:id").get(blogController.getUpdate);
 routes.route("/update/:id").post(blogController.updateData);
 routes.route("/:id").delete(blogController.deleteData);
