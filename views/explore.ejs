@@ -60,6 +60,13 @@
       color: black;
     }
 
+    .no_blog {
+      display: flex;
+      height: 70vh;
+      align-items: center;
+      justify-content: center;
+    }
+
     .p_tags a:hover {
       background-color: #acb0fd;
       color: white;
@@ -124,6 +131,9 @@
   </header>
   <div class="container">
     <h2 style="font-family: 'Dancing Script', cursive">Explore Blogs</h2>
+    <% if(data.length === 0){ %>
+    <h4 class="no_blog">Sorry No blogs Found...</h4>
+    <% }else { %>
     <div class="row">
       <h5 class="p_tags">
         <span>Popular Tags:</span>
@@ -141,6 +151,7 @@
       <% data.forEach(function(currentValue, index, arr){ %>
       <%- include('partials/cards', {currentValue: currentValue, index: index, arr: arr, isMyBlog: false}); %> <% }); %>
     </div>
+    <% } %>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <!-- Compiled and minified JavaScript -->

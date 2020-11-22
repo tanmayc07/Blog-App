@@ -37,7 +37,7 @@ module.exports = {
     return callback(data);
   },
   filterList: async function (tag, callback) {
-    data = await blogTable.find({ tags: [tag.toLowerCase()] });
+    data = await blogTable.find({ tags: tag });
     return callback(data, tag);
   },
   updateBlog: function (inputData, blogID, callback) {
