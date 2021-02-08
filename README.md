@@ -45,7 +45,21 @@ migrate-mongo up
 ```bash
 npm run startDev
 ```
-
+<p>
+  <h2 align="center">Snapshots</h2>
+</p>
+<p align="center">
+  <img alt="cover-image" src="./public/img/snap1.svg">
+</p>
+<p align="center">
+  <img alt="cover-image" src="./public/img/snap2.svg">
+</p>
+<p align="center">
+  <img alt="cover-image" src="./public/img/snap3.svg">
+</p>
+<p align="center">
+  <img alt="cover-image" src="./public/img/snap4.svg">
+</p>
 
 <!-- [![Generic badge](https://img.shields.io/badge/Status-In_Progress-green.svg)](https://shields.io/) -->
 
