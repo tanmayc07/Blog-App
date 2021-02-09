@@ -49,16 +49,19 @@ npm run startDev
   <h2 align="center">Snapshots</h2>
 </p>
 <p align="center">
-  <img alt="cover-image" src="https://ibb.co/1fRK4bT">
+  <img alt="cover-image" src="https://i.ibb.co/mChtPS4/snap1.png">
 </p>
 <p align="center">
-  <img alt="cover-image" src="https://ibb.co/nRDZCWd">
+  <img alt="cover-image" src="https://i.ibb.co/XVzN8w0/snap2.png">
 </p>
 <p align="center">
-  <img alt="cover-image" src="https://ibb.co/BsJtf0q">
+  <img alt="cover-image" src="https://i.ibb.co/JkTKcD5/snap3.png">
 </p>
 <p align="center">
-  <img alt="cover-image" src="https://ibb.co/y4R4CRV">
+  <img alt="cover-image" src="https://i.ibb.co/BnPnJPw/snap4.png">
+</p>
+<p align="center">
+  <img alt="cover-image" src="https://i.ibb.co/7V6zXZk/snap5.png">
 </p>
 
 <!-- [![Generic badge](https://img.shields.io/badge/Status-In_Progress-green.svg)](https://shields.io/) -->
